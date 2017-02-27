@@ -6,6 +6,12 @@ body {
   padding: 10px;
 }
 
+hr#section {
+  color:red;
+  background-color:red;
+}
+// Navigation
+
 .nav-btn {
   background: #3498db;
   background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
@@ -19,7 +25,7 @@ body {
   font-family: Arial;
   color: #ffffff;
   font-size: 20px;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 20px;
   text-decoration: none;
 }
 
@@ -36,6 +42,7 @@ body {
 .nav-container {
   text-align: center;
 }
+// clearfix
 
 .clearfix:after {
   content: " ";
@@ -43,4 +50,29 @@ body {
   display: block;
   height: 0;
   clear: both;
+}
+// Forms
+
+// Initial Hide
+#change-password,
+#change-password-btn,
+#change-password-error,
+#delete-tracker-form,
+#get-tracker-form,
+#new-tracker-form,
+#post-change-warning,
+#show-tracker-form,
+#sign-in,
+#sign-in-success,
+#sign-in-warning,
+#sign-out,
+#sign-out-btn,
+#sign-out-success,
+#sign-out-warning,
+#sign-up,
+#sign-up-success,
+#sign-up-warning,
+#update-tracker-form,
+.dashboard-container {
+  display: none;
 }

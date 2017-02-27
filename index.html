@@ -9,136 +9,153 @@
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
 
-<div class="nav-container">
-  <!-- <img src="sign-up.png" alt="sign-up">
+<body class="container-fluid">
+  <div class="nav-container">
+    <!-- <img src="sign-up.png" alt="sign-up">
   <img src="sign-in.png" alt="sign-in">
   <img src="change-password-btn.png" alt="change password">
   <img src="sign-out.png" alt="sign-out"> -->
-  <button class="login-button" id="sign-up-btn">Sign-Up</button>
-  <button class="login-button" id="sign-in-btn">Sign-in</button>
-  <button class="login-button" id="change-password-btn">Change Password</button>
-  <button class="login-button" id="sign-out-btn">Sign-out</button>
-</div>
+    <button class="login-button prelogin" id="sign-up-btn">Sign-Up</button>
+    <button class="login-button prelogin" id="sign-in-btn">Sign-in</button>
+    <button class="login-button postlogin" id="change-password-btn">Change Password</button>
+    <button class="login-button postlogin" id="sign-out-btn">Sign-out</button>
+  </div>
 
-<div class="clearfix"></div>
-<!-- <canvas id="myChart" width="400" height="400"></canvas> -->
-<form class="form credential-form" id="sign-up" name="sign-up">
-  <fieldset>
-    <legend>Sign up!</legend>
-    <p id="sign-up-warning" class="password-warning">Error. Please Try Again.</p>
-    <p id="sign-up-success" class="password-warning">You have successfully signed up. Please login to start playing</p>
-    <p class="field-description">Email</p>
-    <input name="credentials[email]" placeholder="email" type="text" value="">
-    <p class="field-description">Password</p>
-    <input name="credentials[password]" placeholder="password" type="password" value="">
-    <p class="field-description">Confirm Password</p>
-    <input name="credentials[password_confirmation]" placeholder="password confirmation" type="password" value="">
-    <br>
-    <input name="submit" type="submit" value="Sign up!">
-  </fieldset>
-</form>
-<form class="credential-form" id="sign-in" name="sign-in">
-  <fieldset>
-    <legend>Sign in!</legend>
-    <p id="sign-in-warning" class="password-warning">Error. Please Try Again.</p>
-    <p id="sign-in-success" class="password-warning">You have successfully signed in.</p>
-    <p class="field-description">Email</p>
-    <input name="credentials[email]" placeholder="email" type="text" value="">
-    <p class="field-description">Password</p>
-    <input name="credentials[password]" placeholder="password" type="password" value="">
-    <br>
-    <input name="submit" type="submit" value="Sign in!">
-  </fieldset>
-</form>
-<form class="form credential-form" id="sign-out" name="sign-out">
-  <fieldset>
-    <legend>Sign out!</legend>
-    <p id="post-change-warning">Alert: Your password has been changed. For security purposes, you have been signed-out. Please sign-in to continue playing</p>
+  <div class="warning-container">
     <p id="sign-out-success" class="password-warning">You have successfully signed-out. Please login to start playing</p>
-    <p id="sign-out-warning" class="password-warning">Error Signing Out</p>
-    <input name="submit" type="submit" value="Sign out!">
-  </fieldset>
-</form>
-<form class="form credential-form" id="change-password" name="change-password">
-  <fieldset>
-    <legend>Change Password</legend>
-    <p id="change-password-error">Error changing password.  Please try again.</p>
-    <p class="field-description">Old Password</p>
-    <input name="passwords[old]" placeholder="Old Password" type="password">
-    <p class="field-description">New Password</p>
-    <input name="passwords[new]" placeholder="New Password" type="password">
-    <br>
-    <input name="submit" type="submit" value="Change Password">
-  </fieldset>
-</form>
+  </div>
 
-<form class="form tracker-form" id="get-tracker-form" name="get-tracker-form">
-  <fieldset>
-    <legend>Get Tracker Form</legend>
-    <input name="submit" type="submit" value="View All Trackers">
-  </fieldset>
-</form>
+  <div class="clearfix"></div>
+  <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
+  <form class="form credential-form" id="sign-up" name="sign-up">
+    <fieldset>
+      <legend>Sign up!</legend>
+      <p id="sign-up-warning" class="password-warning">Error. Please Try Again.</p>
+      <p class="field-description">Email</p>
+      <input name="credentials[email]" placeholder="email" type="text" value="">
+      <p class="field-description">Password</p>
+      <input name="credentials[password]" placeholder="password" type="password" value="">
+      <p class="field-description">Confirm Password</p>
+      <input name="credentials[password_confirmation]" placeholder="password confirmation" type="password" value="">
+      <br>
+      <input name="submit" type="submit" value="Sign up!">
+    </fieldset>
+  </form>
 
-<form class="form tracker-form" id="show-tracker-form" name="show-tracker-form">
-  <fieldset>
-    <legend>Show Trackers Form</legend>
-    <p class="field-description">Tracker ID</p>
-    <input name="tracker[id]" id="show-tracker-id" placeholder="Tracker ID" type="text">
-    <br>
-    <input name="submit" type="submit" value="View Tracker">
-  </fieldset>
-</form>
+  <p id="sign-in-success" class="password-warning">You have successfully signed in.</p>
+  <form class="form credential-form" id="sign-in" name="sign-in">
+    <fieldset>
+      <legend>Sign in!</legend>
+      <p id="sign-up-success" class="password-warning">You have successfully signed up. Please login to start playing</p>
+      <p id="sign-in-warning" class="password-warning">Error. Please Try Again.</p>
+      <p class="field-description">Email</p>
+      <input name="credentials[email]" placeholder="email" type="text" value="">
+      <p class="field-description">Password</p>
+      <input name="credentials[password]" placeholder="password" type="password" value="">
+      <br>
+      <input name="submit" type="submit" value="Sign in!">
+    </fieldset>
+  </form>
 
-<form class="form tracker-form" id="new-tracker-form" name="new-tracker-form">
-  <fieldset>
-    <legend>Create Tracker Form</legend>
-    <p class="field-description">First Name</p>
-    <input name="tracker[first_name]" placeholder="First Name" type="text">
-    <br>
-    <p class="field-description">Last Name</p>
-    <input name="tracker[last_name]" placeholder="Last Name" type="text">
-    <br>
-    <p class="field-description">Date of Birth</p>
-    <input name="tracker[grade]" placeholder="Grade" type="text">
-    <br>
-    <p class="field-description">School</p>
-    <input name="tracker[comments]" placeholder="Comments" type="text">
-    <input name="submit" id="create-tracker-btn" type="submit" value="Create Tracker">
-  </fieldset>
-</form>
+  <p id="post-change-warning">Alert: Your password has been changed. For security purposes, you have been signed-out. Please sign-in to continue playing</p>
 
-<form class="form tracker-form" id="delete-tracker-form" name="delete-tracker-form">
-  <fieldset>
-    <legend>Delete Tracker Form</legend>
-    <p class="field-description">Tracker ID</p>
-    <input name="tracker[tracker_id]" id="delete-tracker-id" placeholder="Tracker ID" type="text">
-    <br>
-    <input name="submit" type="submit" value="Delete Tracker">
-  </fieldset>
-</form>
+  <form class="form credential-form" id="sign-out" name="sign-out">
+    <fieldset>
+      <legend>Sign out!</legend>
+      <p id="sign-out-warning" class="password-warning">Error Signing Out</p>
+      <input name="submit" type="submit" value="Sign out!">
+    </fieldset>
+  </form>
 
-<form class="form tracker-form" id="update-tracker-form" name="update-tracker-form">
-  <fieldset>
-    <legend>Update Tracker Form</legend>
-    <p class="field-description">Tracker ID</p>
-    <input name="tracker[id]" id="update-tracker-id" placeholder="Tracker ID" type="text">
-    <br>
-    <p class="field-description">First Name</p>
-    <input name="tracker[first_name]" placeholder="First Name" type="text">
-    <br>
-    <p class="field-description">Last Name</p>
-    <input name="tracker[last_name]" placeholder="Last Name" type="text">
-    <br>
-    <p class="field-description">Grade</p>
-    <input name="tracker[grade]" placeholder="Grade" type="text">
-    <br>
-    <p class="field-description">Last Name</p>
-    <input name="tracker[comments]" placeholder="Comments" type="text">
-    <br>
-    <input name="submit" type="submit" value="Update Tracker">
-  </fieldset>
-</form>
-<br><br><br><br><br><br>
+  <form class="form credential-form" id="change-password" name="change-password">
+    <fieldset>
+      <legend>Change Password</legend>
+      <p id="change-password-error">Error changing password. Please try again.</p>
+      <p class="field-description">Old Password</p>
+      <input name="passwords[old]" placeholder="Old Password" type="password">
+      <p class="field-description">New Password</p>
+      <input name="passwords[new]" placeholder="New Password" type="password">
+      <br>
+      <input name="submit" type="submit" value="Change Password">
+    </fieldset>
+  </form>
+
+
+
+  <form class="form tracker-form tracker" id="get-tracker-form" name="get-tracker-form">
+    <fieldset>
+      <legend>Get Tracker Form</legend>
+      <input name="submit" type="submit" value="View All Trackers">
+    </fieldset>
+  </form>
+
+  <form class="form tracker-form tracker" id="show-tracker-form" name="show-tracker-form">
+    <fieldset>
+      <legend>Show Trackers Form</legend>
+      <p class="field-description">Tracker ID</p>
+      <input name="tracker[id]" id="show-tracker-id" placeholder="Tracker ID" type="text">
+      <br>
+      <input name="submit" type="submit" value="View Tracker">
+    </fieldset>
+  </form>
+
+  <form class="form tracker-form tracker" id="new-tracker-form" name="new-tracker-form">
+    <fieldset>
+      <legend>Create Tracker Form</legend>
+      <p class="field-description">First Name</p>
+      <input name="tracker[first_name]" placeholder="First Name" type="text">
+      <br>
+      <p class="field-description">Last Name</p>
+      <input name="tracker[last_name]" placeholder="Last Name" type="text">
+      <br>
+      <p class="field-description">Date of Birth</p>
+      <input name="tracker[grade]" placeholder="Grade" type="text">
+      <br>
+      <p class="field-description">School</p>
+      <input name="tracker[comments]" placeholder="Comments" type="text">
+      <input name="submit" id="create-tracker-btn" type="submit" value="Create Tracker">
+    </fieldset>
+  </form>
+
+  <form class="form tracker-form tracker" id="delete-tracker-form" name="delete-tracker-form">
+    <fieldset>
+      <legend>Delete Tracker Form</legend>
+      <p class="field-description">Tracker ID</p>
+      <input name="tracker[tracker_id]" id="delete-tracker-id" placeholder="Tracker ID" type="text">
+      <br>
+      <input name="submit" type="submit" value="Delete Tracker">
+    </fieldset>
+  </form>
+
+  <form class="form tracker-form tracker" id="update-tracker-form" name="update-tracker-form">
+    <fieldset>
+      <legend>Update Tracker Form</legend>
+      <p class="field-description">Tracker ID</p>
+      <input name="tracker[id]" id="update-tracker-id" placeholder="Tracker ID" type="text">
+      <br>
+      <p class="field-description">First Name</p>
+      <input name="tracker[first_name]" placeholder="First Name" type="text">
+      <br>
+      <p class="field-description">Last Name</p>
+      <input name="tracker[last_name]" placeholder="Last Name" type="text">
+      <br>
+      <p class="field-description">Grade</p>
+      <input name="tracker[grade]" placeholder="Grade" type="text">
+      <br>
+      <p class="field-description">Last Name</p>
+      <input name="tracker[comments]" placeholder="Comments" type="text">
+      <br>
+      <input name="submit" type="submit" value="Update Tracker">
+    </fieldset>
+  </form>
+
+  <div class="dashboard-container tracker">
+    <div class="dashboard-description">
+      <p>Please make a selection below:</p>
+      <button class="dashboard-btn" id="show-records-btn">Show/Update Students Record</button>
+      <button class="dashboard-btn" id="create-record-btn">Create New Student Record</button>
+    </div>
+  </div>
 </body>
 
 </html>

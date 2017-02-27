@@ -13,15 +13,59 @@ const failure = (error) => {
 };
 
 const signInSuccess = function() {
-  // $("#sign-in").hide();
-  // $("#sign-out").show();
   console.log('sign-in success');
+  $(".prelogin").hide();
+  $(".postlogin").show();
+  $(".password-warning").hide();
+  $("#sign-in").hide();
+  $(".dashboard-container").show();
+  $("#sign-up-success").show();
 };
 
+const signInFailure = function() {
+  $("#sign-in-warning").show();
+};
+
+const signUpSuccess = function() {
+  $(".password-warning").hide();
+  $("#sign-up-warning").hide();
+  $(".sign-in").show();
+};
+
+const signUpFailure = function() {
+  $("#sign-up-warning").show();
+};
+
+const changePasswordSuccess = function() {
+  console.log("change password success");
+};
+
+const changePasswordFailure = function() {
+  console.log("change password failure");
+};
+
+const signOutSuccess = function() {
+  console.log("signout success");
+  $(".prelogin").show();
+  $(".postlogin").hide();
+  $(".tracker-form").hide();
+  $(".tracker").hide();
+  $(".credential-form").hide();
+};
+
+const signOutFailure = function() {
+  console.log("signout failure");
+};
+
+
+///////////////////////
 // Tracker UI
 const getTrackerSuccess = (data) => {
   console.log('get tracker success');
   console.log(data);
+  $("#create-record-btn").show();
+  $("#show-records-btn").hide();
+  $("#new-tracker-form").hide();
 };
 
 const getTrackerFailure = (data) => {
@@ -42,6 +86,11 @@ const showTrackerFailure = (data) => {
 const createTrackerSuccess = (data) => {
   console.log('create tracker success');
   console.log(data);
+  let form = document.getElementById("new-tracker-form");
+  form.reset();
+  $("#new-tracker-form").hide();
+  $("#create-record-btn").show();
+
   // $("#create-setting-stud-id").attr("value", store.currentTrackerId);
 };
 
@@ -84,4 +133,11 @@ module.exports = {
   deleteTrackerSuccess,
   deleteTrackerFailure,
   signInSuccess,
+  signUpSuccess,
+  signUpFailure,
+  signInFailure,
+  changePasswordSuccess,
+  changePasswordFailure,
+  signOutSuccess,
+  signOutFailure,
 };

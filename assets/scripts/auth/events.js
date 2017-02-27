@@ -16,31 +16,31 @@ const onSignIn = function(event) {
       return store.user;
     })
     .done(ui.signInSuccess)
-    .catch(ui.onSignInFailure);
+    .catch(ui.signInFailure);
 };
 
 const onSignUp = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.signUp(data)
-    .done(ui.success)
-    .catch(ui.failure);
+    .done(ui.signUpSuccess)
+    .catch(ui.signUpFailure);
 };
 
 const onSignOut = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.signOut(data)
-    .done(ui.success)
-    .fail(ui.failure);
+    .done(ui.signOutSuccess)
+    .fail(ui.signOutFailure);
 };
 
 const onChangePassword = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.changePassword(data)
-    .done(ui.success)
-    .fail(ui.failure);
+    .done(ui.changePasswordSuccess)
+    .fail(ui.changePasswordFailure);
 };
 
 // STUDENT EVENTS
@@ -87,6 +87,32 @@ const onUpdateTracker = function(event) {
     .fail(ui.updateTrackerFailure);
 };
 
+const onClickSignUpButton = function() {
+  $("#sign-up").toggle();
+  $("#sign-in").hide();
+};
+
+const onClickSignInButton = function() {
+  $("#sign-in").toggle();
+  $("#sign-up").hide();
+};
+
+const onClickChangePasswordButton = function() {
+  $("#change-password").toggle();
+};
+
+const onCreateNewRecordBtn = function() {
+  $("#new-tracker-form").show();
+  $("#show-records-btn").show();
+  $("#create-record-btn").hide();
+};
+
+const onShowRecordsBtn = function() {
+  $("#create-record-btn").show();
+  $("#show-records-btn").hide();
+  $("#new-tracker-form").hide();
+}
+
 const addHandlers = () => {
   $('#get-tracker-form').on('submit', onGetTrackers);
   $('#show-tracker-form').on('submit', onShowTracker);
@@ -97,6 +123,14 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignIn);
   $('#sign-out').on('submit', onSignOut);
   $('#change-password').on('submit', onChangePassword);
+  $('#sign-up-btn').on('click', onClickSignUpButton);
+  $('#sign-in-btn').on('click', onClickSignInButton);
+  $('#change-password-btn').on('click', onClickChangePasswordButton);
+  $('#sign-out-btn').on('click', onSignOut);
+  $('#create-record-btn').on('click', onCreateNewRecordBtn);
+  $('#show-records-btn').on('click', onGetTrackers);
+
+
 };
 
 module.exports = {
