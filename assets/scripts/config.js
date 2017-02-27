@@ -2,7 +2,9 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://ga-wdi-boston.herokuapp.com',
+    // production: 'http://localhost:4741',
+    production: 'https://stud-tracker.herokuapp.com',
+    // development: 'https://boss-api.herokuapp.com',
   },
 };
 
