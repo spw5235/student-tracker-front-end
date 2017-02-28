@@ -50,7 +50,7 @@ const onGetTrackers = function(event) {
   api.getTrackers()
     .then((response) => {
       let tableId = $('<table id="table-gen-id"></table>');
-      let tableRowDesc = $('<tr class="tg-tr-description"><td class="tg-td-description tg-id-hide">Student ID</td><td class="tg-td-description">First Name</td><td class="tg-td-description">Last Name</td><td class="tg-td-description">Details</td></tr>');
+      let tableRowDesc = $('<tr class="tg-tr-description tg-id-hide"><td class="tg-td-description tg-id-hide">Student ID</td><td class="tg-td-description">First Name</td><td class="tg-td-description">Last Name</td><td class="tg-td-description">Details</td></tr>');
       $(tableId).append(tableRowDesc);
       let newGenRow;
       store.numOfStudents = response.trackers.length;
@@ -60,7 +60,9 @@ const onGetTrackers = function(event) {
         const studObjectFirstName = studObject.first_name;
         const studObjectLastName = studObject.last_name;
         const studObjectGrade = studObject.grade;
+        let textclass = studObjectId.toString();
         newGenRow = logic.createRowHTML(studObjectId, studObjectFirstName, studObjectLastName, studObjectGrade);
+        $("tg-td-details").addClass(textclass);
         tableId.append(newGenRow);
       }
       $(".table-generated").append(tableId);
@@ -68,10 +70,6 @@ const onGetTrackers = function(event) {
     .done(ui.getTrackerSuccess)
     .fail(ui.getTrackerFailure);
 };
-
-
-
-
 
 const onShowTracker = function(event) {
   event.preventDefault();

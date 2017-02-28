@@ -16,9 +16,16 @@ const createRowHTML = function(tdIDtxt, TdFntxt, tdLntxt, tdGradetxt) {
   let tdGrade = $('<td class="tg-td-grade">grade</td>');
   tdGrade.text(tdGradetxt);
 
-  let tdDetails = $('<td class="tg-td-details">View/Update</td>');
+  let tdDetailsBtn = $('<button>View/Update</button>');
+  let btnText = tdIDtxt.toString();
+  btnText = btnText + ("-id");
+  tdDetailsBtn.addClass(btnText);
+
+  let tdDetails = $('<td class="tg-td-details"></td>');
+  tdDetails.append(tdDetailsBtn);
 
   let tableGenAppend;
+
 
   tableGenAppend = $(tableTrGenerated).append(tdID);
   tableGenAppend = $(tableTrGenerated).append(tdFn);
@@ -28,6 +35,10 @@ const createRowHTML = function(tdIDtxt, TdFntxt, tdLntxt, tdGradetxt) {
 
   return tableGenAppend;
 };
+
+// const addTableClass = function(tableId) {
+//   let text =
+// }
 
 
 module.exports = {
