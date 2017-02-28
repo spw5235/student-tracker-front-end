@@ -45,12 +45,40 @@ const onChangePassword = function(event) {
 
 // STUDENT EVENTS
 
+
+
+
 const onGetTrackers = function(event) {
   event.preventDefault();
   api.getTrackers()
+    .then((response) => {
+
+
+      store.numOfStudents = response.trackers.length;
+      for (let i = 0; i < store.numOfStudents; i++) {
+        const studObject = response.trackers[i];
+        const studObjectId = studObject.id;
+        const studObjectFirstName = studObject.first_name;
+        const studObjectLastName = studObject.last_name;
+        const studObjectGrade = studObject.grade;
+        console.log(studObjectGrade);
+
+        // for (let j = 0; j < )
+
+
+      }
+
+
+
+
+    })
     .done(ui.getTrackerSuccess)
     .fail(ui.getTrackerFailure);
 };
+
+
+
+
 
 const onShowTracker = function(event) {
   event.preventDefault();
@@ -63,10 +91,10 @@ const onCreateTracker = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.createTracker(data)
-    .then((response) => {
-      store.currentTrackerId = response.tracker.id;
-      return store.currentTrackerId;
-    })
+    // .then((response) => {
+    //   store.currentTrackerId = response.tracker.id;
+    //   return store.currentTrackerId;
+    // })
     .done(ui.createTrackerSuccess)
     .fail(ui.createTrackerFailure);
 };
@@ -111,7 +139,7 @@ const onShowRecordsBtn = function() {
   $("#create-record-btn").show();
   $("#show-records-btn").hide();
   $("#new-tracker-form").hide();
-}
+};
 
 const addHandlers = () => {
   $('#get-tracker-form').on('submit', onGetTrackers);
