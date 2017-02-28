@@ -51,6 +51,7 @@ const signOutSuccess = function() {
   $(".tracker-form").hide();
   $(".tracker").hide();
   $(".credential-form").hide();
+  $(".table-generated-container").hide();
 };
 
 const signOutFailure = function() {
@@ -63,9 +64,14 @@ const signOutFailure = function() {
 const getTrackerSuccess = (data) => {
   console.log('get tracker success');
   console.log(data);
-  $("#create-record-btn").show();
-  $("#show-records-btn").hide();
-  $("#new-tracker-form").hide();
+  // $("#create-record-btn").show();
+  // $("#show-records-btn").hide();
+  // $("#new-tracker-form").hide();
+  // $("#create-record-btn").show();
+  // $("#new-tracker-form").show();
+  // $("#show-records-btn").hide();
+  // $("#new-tracker-form").hide();
+  // $(".table-generated-container").hide();
 };
 
 const getTrackerFailure = (data) => {
