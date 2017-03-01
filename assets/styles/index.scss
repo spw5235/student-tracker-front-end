@@ -85,7 +85,17 @@ hr#section {
 }
 
 #table-gen-id td {
-  width: 14%;
+  width: 16%;
+}
+
+.comments-input {
+  width: 380px;
+  height: 95px;
+}
+
+//hides student id column
+.tg-id-hide {
+  display: none;
 }
 
 .tg-td-details-view, .tg-td-details-update, .tg-td-details-delete {

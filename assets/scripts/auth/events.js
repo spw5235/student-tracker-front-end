@@ -50,7 +50,7 @@ const onGetTrackers = function(event) {
   api.getTrackers()
     .then((response) => {
       let tableId = $('<table id="table-gen-id"></table>');
-      let tableRowDesc = $('<tr class="tg-tr-description tg-id-hide"><td class="tg-td-description tg-id-hide">Student ID</td><td class="tg-td-description">First Name</td><td class="tg-td-description">Last Name</td><td class="tg-td-description">Grade</td><td class="tg-td-description">View</td><td class="tg-td-description">Update</td><td class="tg-td-description">Delete</td></tr>');
+      let tableRowDesc = $('<tr class="tg-tr-description"><td class="tg-td-description tg-id-hide">Student ID</td><td class="tg-td-description">First Name</td><td class="tg-td-description">Last Name</td><td class="tg-td-description">Grade</td><td class="tg-td-comment tg-id-hide">Comments</td><td class="tg-td-description">View</td><td class="tg-td-description">Update</td><td class="tg-td-description">Delete</td></tr>');
       $(tableId).append(tableRowDesc);
       let newGenRow;
       store.numOfStudents = response.trackers.length;
@@ -60,8 +60,9 @@ const onGetTrackers = function(event) {
         const studObjectFirstName = studObject.first_name;
         const studObjectLastName = studObject.last_name;
         const studObjectGrade = studObject.grade;
+        const studObjectComment = studObject.comments;
         let textclass = studObjectId.toString();
-        newGenRow = logic.createRowHTML(studObjectId, studObjectFirstName, studObjectLastName, studObjectGrade);
+        newGenRow = logic.createRowHTML(studObjectId, studObjectFirstName, studObjectLastName, studObjectGrade, studObjectComment);
         $("tg-td-details").addClass(textclass);
         tableId.append(newGenRow);
       }
@@ -74,6 +75,9 @@ const onGetTrackers = function(event) {
 const onShowTracker = function(event) {
   event.preventDefault();
   api.showTracker()
+    .then((response) => {
+      console.log('then');
+    })
     .done(ui.showTrackerSuccess)
     .fail(ui.showTrackerFailure);
 };
@@ -127,6 +131,7 @@ const onCreateNewRecordBtn = function() {
   $("#create-record-btn").hide();
   $(".table-generated-container").hide();
   $("#table-gen-id").remove();
+  $("#update-tracker-form").hide();
 };
 
 const onShowRecordsBtn = function() {
@@ -134,7 +139,7 @@ const onShowRecordsBtn = function() {
   $("#new-tracker-form").show();
   $("#show-records-btn").hide();
   $("#new-tracker-form").hide();
-  $(".table-generated-container").show();
+  $(".table-generated").show();
 };
 
  $('#show-records-btn').on('click', onShowRecordsBtn);
@@ -158,10 +163,10 @@ const addHandlers = () => {
   $('.delete-button').on('click', onGetTrackers);
 
   // $('.table-gen-btn-delete').on('click', onDeleteTracker);
-  $( ".delete-button" ).on( "click", function() {
-   let btnClassName = parseInt( $( this ).attr("id") );
-   console.log(btnClassName);
-  });
+  // $( ".delete-button" ).on( "click", function() {
+  //  let btnClassName = parseInt( $( this ).attr("id") );
+  //  console.log(btnClassName);
+  // });
 };
 
 module.exports = {

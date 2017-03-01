@@ -1,6 +1,6 @@
 'use strict';
 
-const createRowHTML = function(tdIDtxt, TdFntxt, tdLntxt, tdGradetxt) {
+const createRowHTML = function(tdIDtxt, TdFntxt, tdLntxt, tdGradetxt, tdCommentTxt) {
 
   let tableTrGenerated = $('<tr class="tg-tr-gen"></tr>');
 
@@ -13,8 +13,11 @@ const createRowHTML = function(tdIDtxt, TdFntxt, tdLntxt, tdGradetxt) {
   let tdLn = $('<td class="tg-td-ln">ln</td>');
   tdLn.text(tdLntxt);
 
-  let tdGrade = $('<td class="tg-td-grade">grade</td>');
+  let tdGrade = $('<td class="tg-td-grade"></td>');
   tdGrade.text(tdGradetxt);
+
+  let tdComment = $('<td class="tg-td-comment tg-id-hide"></td>');
+  tdComment.text(tdCommentTxt);
 
   let tdViewBtn = $('<button class="view-button">View</button>');
   let tdUpdateBtn = $('<button class="update-button">Update</button>');
@@ -50,6 +53,7 @@ const createRowHTML = function(tdIDtxt, TdFntxt, tdLntxt, tdGradetxt) {
   tableGenAppend = $(tableTrGenerated).append(tdFn);
   tableGenAppend = $(tableTrGenerated).append(tdLn);
   tableGenAppend = $(tableTrGenerated).append(tdGrade);
+  tableGenAppend = $(tableTrGenerated).append(tdComment);
   tableGenAppend = $(tableTrGenerated).append(tdDetailsView);
   tableGenAppend = $(tableTrGenerated).append(tdDetailsUpdate);
   tableGenAppend = $(tableTrGenerated).append(tdDetailsDelete);

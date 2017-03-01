@@ -72,6 +72,7 @@ const getTrackerFailure = (data) => {
 const showTrackerSuccess = (data) => {
   console.log('show tracker success');
   console.log(data);
+  $("#table-gen-id").remove();
 };
 
 const showTrackerFailure = (data) => {
@@ -86,6 +87,7 @@ const createTrackerSuccess = (data) => {
   form.reset();
   $("#new-tracker-form").hide();
   $("#create-record-btn").show();
+  $("#table-gen-id").remove();
 
   // $("#create-setting-stud-id").attr("value", store.currentTrackerId);
 };
@@ -108,6 +110,9 @@ const deleteTrackerFailure = (data) => {
 const updateTrackerSuccess = (data) => {
   console.log('update tracker success');
   console.log(data);
+  $("#update-tracker-form").hide();
+  $("#show-records-btn").show();
+  $("#table-gen-id").remove();
 };
 
 const updateTrackerFailure = (data) => {
@@ -126,13 +131,22 @@ const deleteRow = function() {
    });
 };
 
-const UpdateRow = function() {
+const updateRow = function() {
    $( ".update-button" ).on( "click", function() {
     // let btnClassName = parseInt( $( this ).attr("id") );
-    store.buttonUpdateVal = $( this ).attr("id");
+    store.buttonUpdateVal = parseInt($( this ).attr("id"));
+    store.btnUpdateFnText = $( this ).parent().parent().children(".tg-td-fn").text();
+    store.btnUpdateLnText = $( this ).parent().parent().children(".tg-td-ln").text();
+    store.btnUpdateGradeText = $( this ).parent().parent().children(".tg-td-grade").text();
+    store.btnUpdateCommentText = $( this ).parent().parent().children(".tg-td-comment").text();
+    console.log(store.btnUpdateCommentText);
     $("#update-tracker-form").show();
-    $("#update-tracker-form").hide();
-
+    $(".table-generated").hide();
+    $("#update-tracker-form").show();
+    $(".fn-input").val(store.btnUpdateFnText);
+    $(".ln-input").val(store.btnUpdateLnText);
+    $(".grade-input").val(store.btnUpdateGradeText);
+    $(".comments-input").text(store.btnUpdateCommentText);
    });
 };
 
@@ -141,6 +155,7 @@ const getTrackerSuccess = (data) => {
   console.log(data);
   $("#show-records-btn").hide();
   deleteRow();
+  updateRow();
   // $("#create-record-btn").show();
   // $("#show-records-btn").hide();
   // $("#new-tracker-form").hide();

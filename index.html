@@ -131,19 +131,20 @@
     <fieldset>
       <legend>Update Tracker Form</legend>
       <p class="field-description">Tracker ID</p>
-      <input name="tracker[id]" id="update-tracker-id" placeholder="Tracker ID" type="text">
+      <input name="tracker[id]" id="update-tracker-id" placeholder="Tracker ID" type="hidden">
       <br>
       <p class="field-description">First Name</p>
-      <input name="tracker[first_name]" placeholder="First Name" type="text">
+      <input class="fn-input" name="tracker[first_name]" placeholder="First Name" type="text">
       <br>
       <p class="field-description">Last Name</p>
-      <input name="tracker[last_name]" placeholder="Last Name" type="text">
+      <input class="ln-input" name="tracker[last_name]" placeholder="Last Name" type="text">
       <br>
       <p class="field-description">Grade</p>
-      <input name="tracker[grade]" placeholder="Grade" type="text">
+      <input class="grade-input" name="tracker[grade]" placeholder="Grade" type="text">
       <br>
       <p class="field-description">Last Name</p>
-      <input name="tracker[comments]" placeholder="Comments" type="text">
+      <textarea class="comments-input" name="tracker[comments]" placeholder="Comments" type="textarea"></textarea>
+      <!-- <input class="comments-input" name="tracker[comments]" placeholder="Comments" type="textarea"> -->
       <br>
       <input name="submit" type="submit" value="Update Tracker">
     </fieldset>
