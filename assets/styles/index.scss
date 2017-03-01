@@ -76,3 +76,18 @@ hr#section {
 .dashboard-container {
   display: none;
 }
+
+// Generated table
+#table-gen-id {
+  width:100%;
+  border: 1px solid black;
+  text-align: center;
+}
+
+#table-gen-id td {
+  width: 14%;
+}
+
+.tg-td-details-view, .tg-td-details-update, .tg-td-details-delete {
+  text-align: center;
+}

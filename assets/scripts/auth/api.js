@@ -77,7 +77,7 @@ const createTracker = function(data) {
 
 const deleteTracker = function() {
   return $.ajax({
-    url: config.apiOrigin + '/trackers/' + document.getElementById("delete-tracker-id").value,
+    url: config.apiOrigin + '/trackers/' + store.buttonDeleteVal,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token,
@@ -87,7 +87,7 @@ const deleteTracker = function() {
 
 const updateTracker = function(data) {
   return $.ajax({
-    url: config.apiOrigin + '/trackers/' + document.getElementById("update-tracker-id").value,
+    url: config.apiOrigin + '/trackers/' + store.buttonUpdateVal,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token,

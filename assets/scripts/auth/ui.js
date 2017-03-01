@@ -1,6 +1,7 @@
 'use strict';
 
-// const store = require('../store');
+const api = require('./api');
+const store = require('../store');
 
 const success = (data) => {
   console.log('success completed');
@@ -61,18 +62,7 @@ const signOutFailure = function() {
 
 ///////////////////////
 // Tracker UI
-const getTrackerSuccess = (data) => {
-  console.log('get tracker success');
-  console.log(data);
-  // $("#create-record-btn").show();
-  // $("#show-records-btn").hide();
-  // $("#new-tracker-form").hide();
-  // $("#create-record-btn").show();
-  // $("#new-tracker-form").show();
-  // $("#show-records-btn").hide();
-  // $("#new-tracker-form").hide();
-  // $(".table-generated-container").hide();
-};
+
 
 const getTrackerFailure = (data) => {
   console.log('get tracker failure');
@@ -123,6 +113,42 @@ const updateTrackerSuccess = (data) => {
 const updateTrackerFailure = (data) => {
   console.log('update tracker failure');
   console.log(data);
+};
+
+const deleteRow = function() {
+   $( ".delete-button" ).on( "click", function() {
+    // let btnClassName = parseInt( $( this ).attr("id") );
+    store.buttonDeleteVal = $( this ).attr("id");
+    api.deleteTracker(store.buttonDeleteVal)
+      .done(deleteTrackerSuccess)
+      .fail(deleteTrackerFailure);
+    $(this).parent().parent().hide();
+   });
+};
+
+const UpdateRow = function() {
+   $( ".update-button" ).on( "click", function() {
+    // let btnClassName = parseInt( $( this ).attr("id") );
+    store.buttonUpdateVal = $( this ).attr("id");
+    $("#update-tracker-form").show();
+    $("#update-tracker-form").hide();
+
+   });
+};
+
+const getTrackerSuccess = (data) => {
+  console.log('get tracker success');
+  console.log(data);
+  $("#show-records-btn").hide();
+  deleteRow();
+  // $("#create-record-btn").show();
+  // $("#show-records-btn").hide();
+  // $("#new-tracker-form").hide();
+  // $("#create-record-btn").show();
+  // $("#new-tracker-form").show();
+  // $("#show-records-btn").hide();
+  // $("#new-tracker-form").hide();
+  // $(".table-generated-container").hide();
 };
 
 module.exports = {

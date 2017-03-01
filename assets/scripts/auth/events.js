@@ -50,7 +50,7 @@ const onGetTrackers = function(event) {
   api.getTrackers()
     .then((response) => {
       let tableId = $('<table id="table-gen-id"></table>');
-      let tableRowDesc = $('<tr class="tg-tr-description tg-id-hide"><td class="tg-td-description tg-id-hide">Student ID</td><td class="tg-td-description">First Name</td><td class="tg-td-description">Last Name</td><td class="tg-td-description">Details</td></tr>');
+      let tableRowDesc = $('<tr class="tg-tr-description tg-id-hide"><td class="tg-td-description tg-id-hide">Student ID</td><td class="tg-td-description">First Name</td><td class="tg-td-description">Last Name</td><td class="tg-td-description">Grade</td><td class="tg-td-description">View</td><td class="tg-td-description">Update</td><td class="tg-td-description">Delete</td></tr>');
       $(tableId).append(tableRowDesc);
       let newGenRow;
       store.numOfStudents = response.trackers.length;
@@ -98,6 +98,7 @@ const onDeleteTracker = function(event) {
     .fail(ui.deleteTrackerFailure);
 };
 
+
 const onUpdateTracker = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
@@ -125,6 +126,7 @@ const onCreateNewRecordBtn = function() {
   $("#show-records-btn").show();
   $("#create-record-btn").hide();
   $(".table-generated-container").hide();
+  $("#table-gen-id").remove();
 };
 
 const onShowRecordsBtn = function() {
@@ -132,8 +134,10 @@ const onShowRecordsBtn = function() {
   $("#new-tracker-form").show();
   $("#show-records-btn").hide();
   $("#new-tracker-form").hide();
-  $(".table-generated-container").hide();
+  $(".table-generated-container").show();
 };
+
+ $('#show-records-btn').on('click', onShowRecordsBtn);
 
 const addHandlers = () => {
   $('#get-tracker-form').on('submit', onGetTrackers);
@@ -151,10 +155,16 @@ const addHandlers = () => {
   $('#sign-out-btn').on('click', onSignOut);
   $('#create-record-btn').on('click', onCreateNewRecordBtn);
   $('#show-records-btn').on('click', onGetTrackers);
+  $('.delete-button').on('click', onGetTrackers);
 
-
+  // $('.table-gen-btn-delete').on('click', onDeleteTracker);
+  $( ".delete-button" ).on( "click", function() {
+   let btnClassName = parseInt( $( this ).attr("id") );
+   console.log(btnClassName);
+  });
 };
 
 module.exports = {
   addHandlers,
+  onDeleteTracker,
 };
