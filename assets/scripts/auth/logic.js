@@ -61,11 +61,43 @@ const createRowHTML = function(tdIDtxt, TdFntxt, tdLntxt, tdGradetxt, tdCommentT
   return tableGenAppend;
 };
 
-// const addTableClass = function(tableId) {
-//   let text =
-// }
+const createShowTable = function(TdFntxt, tdLntxt, tdGradetxt, tdCommentTxt) {
+  let tableId = $('<table id="table-gen-show"></table>');
+
+  let tableTrGeneratedName = $('<tr class="tr-gen-name-show"></tr>');
+  let tableTrGeneratedGrade = $('<tr class="tr-gen-grade-show"></tr>');
+  let tableTrGeneratedComments = $('<tr class="tr-gen-comments-show"></tr>');
+
+  let tdName = $('<td class="td-gen-name-show"></td>');
+  let tdGrade = $('<td class="td-gen-grade-show"></td>');
+  let tdComments= $('<td class="td-gen-comments-show"></td>');
+
+  let fullName = TdFntxt + " " + tdLntxt;
+  tdName.text(fullName);
+
+  let gradeTxt = "Grade: " + tdGradetxt;
+  tdGrade.text(gradeTxt);
+
+  tdComments.text(tdCommentTxt);
+
+  console.log(tdComments);
+
+  let tableGenAppend;
+
+  tableGenAppend = $(tableTrGeneratedName).append(tdName);
+  tableGenAppend = $(tableTrGeneratedGrade).append(tdGrade);
+  tableGenAppend = $(tableTrGeneratedComments).append(tdComments);
+
+  tableGenAppend = $(tableId).append(tableTrGeneratedName);
+  tableGenAppend = $(tableId).append(tableTrGeneratedGrade);
+  tableGenAppend = $(tableId).append(tableTrGeneratedComments);
+
+  return tableGenAppend;
+
+};
 
 
 module.exports = {
   createRowHTML,
+  createShowTable,
 };

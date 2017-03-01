@@ -108,11 +108,12 @@
       <p class="field-description">Last Name</p>
       <input name="tracker[last_name]" placeholder="Last Name" type="text">
       <br>
-      <p class="field-description">Date of Birth</p>
+      <p class="field-description">Grade</p>
       <input name="tracker[grade]" placeholder="Grade" type="text">
       <br>
       <p class="field-description">School</p>
-      <input name="tracker[comments]" placeholder="Comments" type="text">
+      <!-- <input name="tracker[comments]" placeholder="Comments" type="text"> -->
+      <textarea name="tracker[comments]" placeholder="School"></textarea>
       <input name="submit" id="create-tracker-btn" type="submit" value="Create Tracker">
     </fieldset>
   </form>
@@ -142,8 +143,8 @@
       <p class="field-description">Grade</p>
       <input class="grade-input" name="tracker[grade]" placeholder="Grade" type="text">
       <br>
-      <p class="field-description">Last Name</p>
-      <textarea class="comments-input" name="tracker[comments]" placeholder="Comments" type="textarea"></textarea>
+      <p class="field-description">Comments</p>
+      <textarea class="comments-input" name="tracker[comments]" placeholder="Comments"></textarea>
       <!-- <input class="comments-input" name="tracker[comments]" placeholder="Comments" type="textarea"> -->
       <br>
       <input name="submit" type="submit" value="Update Tracker">
@@ -151,6 +152,8 @@
   </form>
 
     <div class="table-generated"></div>
+
+    <div class="show-table-generated-container"></div>
 
   <div class="dashboard-container tracker">
     <div class="dashboard-description">

@@ -2,6 +2,7 @@
 
 const api = require('./api');
 const store = require('../store');
+const logic = require('./logic');
 
 const success = (data) => {
   console.log('success completed');
@@ -73,6 +74,7 @@ const showTrackerSuccess = (data) => {
   console.log('show tracker success');
   console.log(data);
   $("#table-gen-id").remove();
+  $("#table-gen-id");
 };
 
 const showTrackerFailure = (data) => {
@@ -113,11 +115,34 @@ const updateTrackerSuccess = (data) => {
   $("#update-tracker-form").hide();
   $("#show-records-btn").show();
   $("#table-gen-id").remove();
+  let form = document.getElementById("update-tracker-form");
+  form.reset();
 };
 
 const updateTrackerFailure = (data) => {
   console.log('update tracker failure');
   console.log(data);
+};
+
+const showRow = function() {
+  $( ".view-button" ).on( "click", function() {
+   // let btnClassName = parseInt( $( this ).attr("id") );
+    store.buttonShowVal = parseInt($( this ).attr("id"));
+    console.log(store.buttonShowVal);
+    api.showTracker()
+      .then((response) => {
+        store.showFn = response.tracker.first_name;
+        store.showLn = response.tracker.last_name;
+        store.showGrade = response.tracker.grade;
+        store.showComments = response.tracker.comments;
+
+        let showTableHtml = logic.createShowTable(store.showFn, store.showLn, store.showGrade, store.showComments);
+        console.log(showTableHtml);
+        $(".show-table-generated-container").append(showTableHtml);
+    })
+    .done(showTrackerSuccess)
+    .fail(showTrackerFailure);
+  });
 };
 
 const deleteRow = function() {
@@ -150,12 +175,15 @@ const updateRow = function() {
    });
 };
 
+
+
 const getTrackerSuccess = (data) => {
   console.log('get tracker success');
   console.log(data);
   $("#show-records-btn").hide();
   deleteRow();
   updateRow();
+  showRow();
   // $("#create-record-btn").show();
   // $("#show-records-btn").hide();
   // $("#new-tracker-form").hide();
@@ -187,4 +215,5 @@ module.exports = {
   changePasswordFailure,
   signOutSuccess,
   signOutFailure,
+  showRow,
 };

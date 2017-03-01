@@ -4,6 +4,7 @@ const ui = require('./ui');
 const getFormFields = require('../../../lib/get-form-fields');
 const store = require('../store');
 const logic = require('./logic');
+const eventsjs = require('./events');
 
 // LOGIN EVENTS
 
@@ -72,15 +73,26 @@ const onGetTrackers = function(event) {
     .fail(ui.getTrackerFailure);
 };
 
-const onShowTracker = function(event) {
-  event.preventDefault();
-  api.showTracker()
-    .then((response) => {
-      console.log('then');
-    })
-    .done(ui.showTrackerSuccess)
-    .fail(ui.showTrackerFailure);
-};
+// const onShowTracker = function() {
+//   event.preventDefault();
+//   api.showTracker()
+//     .then((response) => {
+//       console.log(response);
+//       console.log(store.buttonShowVal);
+
+
+
+    //   $( ".update-button" ).on( "click", function() {
+    //    // let btnClassName = parseInt( $( this ).attr("id") );
+    //    store.buttonShowVal = parseInt($( this ).attr("id"));
+    //    store.btnShowFnText = $( this ).parent().parent().children(".tg-td-fn").text();
+    //    store.btnShowText = $( this ).parent().parent().children(".tg-td-ln").text();
+    //    store.btnShowGradeText = $( this ).parent().parent().children(".tg-td-grade").text();
+    //    store.btnShowCommentText = $( this ).parent().parent().children(".tg-td-comment").text();
+    // })
+//     .done(ui.showTrackerSuccess)
+//     .fail(ui.showTrackerFailure);
+// };
 
 const onCreateTracker = function(event) {
   event.preventDefault();
@@ -146,7 +158,7 @@ const onShowRecordsBtn = function() {
 
 const addHandlers = () => {
   $('#get-tracker-form').on('submit', onGetTrackers);
-  $('#show-tracker-form').on('submit', onShowTracker);
+  // $('#show-tracker-form').on('submit', onShowTracker);
   $('#new-tracker-form').on('submit', onCreateTracker);
   $('#delete-tracker-form').on('submit', onDeleteTracker);
   $('#update-tracker-form').on('submit', onUpdateTracker);
@@ -161,6 +173,7 @@ const addHandlers = () => {
   $('#create-record-btn').on('click', onCreateNewRecordBtn);
   $('#show-records-btn').on('click', onGetTrackers);
   $('.delete-button').on('click', onGetTrackers);
+  $('.view-button').on('click', eventsjs.showRow);
 
   // $('.table-gen-btn-delete').on('click', onDeleteTracker);
   // $( ".delete-button" ).on( "click", function() {
@@ -172,4 +185,5 @@ const addHandlers = () => {
 module.exports = {
   addHandlers,
   onDeleteTracker,
+  // onShowTracker,
 };

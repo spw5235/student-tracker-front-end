@@ -56,7 +56,7 @@ const getTrackers = function() {
 
 const showTracker = function() {
   return $.ajax({
-    url: config.apiOrigin + '/trackers/' + document.getElementById("show-tracker-id").value,
+    url: config.apiOrigin + '/trackers/' + store.buttonShowVal,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token,

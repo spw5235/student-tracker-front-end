@@ -86,6 +86,18 @@ hr#section {
 
 #table-gen-id td {
   width: 16%;
+  border: 1px solid black;
+}
+
+#table-gen-show {
+  width:80%;
+  border: 1px solid black;
+  text-align: center;
+}
+
+#table-gen-show td {
+  width: 80%;
+  border: 1px solid black;
 }
 
 .comments-input {
