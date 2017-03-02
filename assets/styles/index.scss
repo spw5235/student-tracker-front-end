@@ -214,6 +214,11 @@ input[type=submit]:hover {
     background-color: #45a049;
 }
 
+// Update Btn on show
+.td-gen-update-show {
+  text-align: center;
+}
+
 @media screen and (max-width: 750px) {
     input[type=text], select {
         width: 75%;
