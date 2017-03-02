@@ -3,12 +3,13 @@
 const api = require('./api');
 const store = require('../store');
 const logic = require('./logic');
+// const eventsjs = require('./events');
 
 // Button jQuery
 
 // Success/Fail Handler
 
-$("#show-records-btn").html()
+// $("#show-records-btn").html();
 
 const success = (data) => {
   console.log('success completed');
@@ -78,12 +79,56 @@ const getTrackerFailure = (data) => {
   console.log(data);
 };
 
+const updateRow = function() {
+   $( ".update-button" ).on( "click", function() {
+    // let btnClassName = parseInt( $( this ).attr("id") );
+    store.buttonUpdateVal = parseInt($( this ).attr("id"));
+    store.btnUpdateFnText = $( this ).parent().parent().children(".tg-td-fn").text();
+    store.btnUpdateLnText = $( this ).parent().parent().children(".tg-td-ln").text();
+    store.btnUpdateGradeText = $( this ).parent().parent().children(".tg-td-grade").text();
+    store.btnUpdateCommentText = $( this ).parent().parent().children(".tg-td-comment").text();
+    console.log(store.btnUpdateCommentText);
+    $("#update-tracker-form").show();
+    $("#table-gen-id").remove();
+    $(".fn-input").val(store.btnUpdateFnText);
+    $(".ln-input").val(store.btnUpdateLnText);
+    $(".grade-input").val(store.btnUpdateGradeText);
+    $(".comments-input").text(store.btnUpdateCommentText);
+   });
+};
+
+const updateButtonInShow = function() {
+  $( "#update-record-btn" ).on( "click", function() {
+    store.buttonUpdateVal = store.showId;
+    const fullNameArr = $(".td-gen-name-show").text().split(" ");
+    const firstNameUpdate = fullNameArr[0].trim();
+    const lastNameUpdate = fullNameArr[1].trim();
+
+    const gradeArr = $(".td-gen-grade-show").text().split(": ");
+    let gradeUpdate = gradeArr[1].trim();
+
+
+    store.showUpdateFirstName = firstNameUpdate;
+    store.showUpdateLastName = lastNameUpdate;
+    store.showUpdateGradeText = gradeUpdate;
+    store.showUpdateCommentText = $(".td-gen-comments-show").text();
+    $("#update-tracker-form").show();
+    $(".table-generated").hide();
+    $(".fn-input").val(store.showUpdateFirstName);
+    $(".ln-input").val(store.showUpdateLastName);
+    $(".grade-input").val(store.showUpdateGradeText);
+    $(".comments-input").text(store.showUpdateCommentText);
+    $("#table-gen-show").remove();
+  });
+};
+
 const showTrackerSuccess = (data) => {
   console.log('show tracker success');
   console.log(data);
   $("#table-gen-id").remove();
   $("#table-gen-id");
   $("#show-records-btn").show();
+  updateButtonInShow();
 };
 
 const showTrackerFailure = (data) => {
@@ -143,6 +188,7 @@ const showRow = function() {
     console.log(store.buttonShowVal);
     api.showTracker()
       .then((response) => {
+        store.showId = response.tracker.id;
         store.showFn = response.tracker.first_name;
         store.showLn = response.tracker.last_name;
         store.showGrade = response.tracker.grade;
@@ -167,26 +213,6 @@ const deleteRow = function() {
     $(this).parent().parent().hide();
    });
 };
-
-const updateRow = function() {
-   $( ".update-button" ).on( "click", function() {
-    // let btnClassName = parseInt( $( this ).attr("id") );
-    store.buttonUpdateVal = parseInt($( this ).attr("id"));
-    store.btnUpdateFnText = $( this ).parent().parent().children(".tg-td-fn").text();
-    store.btnUpdateLnText = $( this ).parent().parent().children(".tg-td-ln").text();
-    store.btnUpdateGradeText = $( this ).parent().parent().children(".tg-td-grade").text();
-    store.btnUpdateCommentText = $( this ).parent().parent().children(".tg-td-comment").text();
-    console.log(store.btnUpdateCommentText);
-    $("#update-tracker-form").show();
-    $(".table-generated").hide();
-    $("#update-tracker-form").show();
-    $(".fn-input").val(store.btnUpdateFnText);
-    $(".ln-input").val(store.btnUpdateLnText);
-    $(".grade-input").val(store.btnUpdateGradeText);
-    $(".comments-input").text(store.btnUpdateCommentText);
-   });
-};
-
 
 
 const getTrackerSuccess = (data) => {
@@ -228,4 +254,5 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   showRow,
+  updateButtonInShow
 };

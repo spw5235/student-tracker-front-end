@@ -96,6 +96,17 @@ const updateTracker = function(data) {
   });
 };
 
+const updateTrackerinShow = function(data) {
+  return $.ajax({
+    url: config.apiOrigin + '/trackers/' + store.showId,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+    },
+    data,
+  });
+};
+
 module.exports = {
   signUp,
   signIn,
@@ -106,4 +117,5 @@ module.exports = {
   createTracker,
   deleteTracker,
   updateTracker,
+  updateTrackerinShow,
 };

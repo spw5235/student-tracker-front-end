@@ -4,7 +4,7 @@ const ui = require('./ui');
 const getFormFields = require('../../../lib/get-form-fields');
 const store = require('../store');
 const logic = require('./logic');
-const eventsjs = require('./events');
+// const eventsjs = require('./events');
 
 // LOGIN EVENTS
 
@@ -150,12 +150,14 @@ const onCreateNewRecordBtn = function() {
 
 const onShowRecordsBtn = function() {
   $("#create-record-btn").show();
-  $("#new-tracker-form").show();
   $("#show-records-btn").hide();
   $("#new-tracker-form").hide();
   $(".table-generated").show();
   $("#table-gen-show").remove();
   $("#update-form-error").hide();
+  $("#update-tracker-form").hide();
+
+
 };
 
  $('#show-records-btn').on('click', onShowRecordsBtn);
@@ -177,7 +179,7 @@ const addHandlers = () => {
   $('#create-record-btn').on('click', onCreateNewRecordBtn);
   $('#show-records-btn').on('click', onGetTrackers);
   $('.delete-button').on('click', onGetTrackers);
-  $('.view-button').on('click', eventsjs.showRow);
+  // $('.view-button').on('click', eventsjs.showRow);
 
   // $('.table-gen-btn-delete').on('click', onDeleteTracker);
   // $( ".delete-button" ).on( "click", function() {
