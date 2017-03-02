@@ -5,7 +5,6 @@ const store = require('../store');
 const logic = require('./logic');
 // const eventsjs = require('./events');
 
-// Button jQuery
 
 // Success/Fail Handler
 
@@ -29,6 +28,8 @@ const signInSuccess = function() {
   $("#sign-in").hide();
   $(".dashboard-container").show();
   $("#sign-up-success").show();
+  $('#create-record-btn').show();
+  $('#show-records-btn').show();
 };
 
 const signInFailure = function() {
@@ -63,7 +64,11 @@ const signOutSuccess = function() {
   $(".table-generated-container").hide();
   $("#table-gen-show").remove();
   $("#table-gen-id").remove();
+  $("#new-tracker-form .field-input").val("");
+  $("#sign-out-success").show();
 };
+
+// To Hide Signout Warning when signing in or signing up
 
 const signOutFailure = function() {
   console.log("signout failure");
@@ -88,6 +93,7 @@ const updateRow = function() {
     store.btnUpdateGradeText = $( this ).parent().parent().children(".tg-td-grade").text();
     store.btnUpdateCommentText = $( this ).parent().parent().children(".tg-td-comment").text();
     console.log(store.btnUpdateCommentText);
+    $("#show-records-btn").show();
     $("#update-tracker-form").show();
     $("#table-gen-id").remove();
     $(".fn-input").val(store.btnUpdateFnText);
@@ -254,5 +260,5 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   showRow,
-  updateButtonInShow
+  updateButtonInShow,
 };

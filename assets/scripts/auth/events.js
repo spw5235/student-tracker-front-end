@@ -146,6 +146,7 @@ const onCreateNewRecordBtn = function() {
   $("#update-tracker-form").hide();
   $("#table-gen-show").remove();
   $("#update-form-error").show();
+  $(".comments-input").text('');
 };
 
 const onShowRecordsBtn = function() {
@@ -156,8 +157,6 @@ const onShowRecordsBtn = function() {
   $("#table-gen-show").remove();
   $("#update-form-error").hide();
   $("#update-tracker-form").hide();
-
-
 };
 
  $('#show-records-btn').on('click', onShowRecordsBtn);
