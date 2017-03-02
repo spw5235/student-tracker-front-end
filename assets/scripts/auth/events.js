@@ -144,6 +144,8 @@ const onCreateNewRecordBtn = function() {
   $(".table-generated-container").hide();
   $("#table-gen-id").remove();
   $("#update-tracker-form").hide();
+  $("#table-gen-show").remove();
+  $("#update-form-error").show();
 };
 
 const onShowRecordsBtn = function() {
@@ -152,6 +154,8 @@ const onShowRecordsBtn = function() {
   $("#show-records-btn").hide();
   $("#new-tracker-form").hide();
   $(".table-generated").show();
+  $("#table-gen-show").remove();
+  $("#update-form-error").hide();
 };
 
  $('#show-records-btn').on('click', onShowRecordsBtn);

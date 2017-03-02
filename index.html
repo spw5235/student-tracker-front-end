@@ -38,7 +38,7 @@
       <p class="field-description">Confirm Password</p>
       <input name="credentials[password_confirmation]" placeholder="password confirmation" type="password" value="">
       <br>
-      <input name="submit" type="submit" value="Sign up!">
+      <input class="submit-btn" name="submit" type="submit" value="Sign up!">
     </fieldset>
   </form>
 
@@ -49,11 +49,11 @@
       <p id="sign-up-success" class="password-warning">You have successfully signed up. Please login to start playing</p>
       <p id="sign-in-warning" class="password-warning">Error. Please Try Again.</p>
       <p class="field-description">Email</p>
-      <input name="credentials[email]" placeholder="email" type="text" value="">
+      <input class="field-input" name="credentials[email]" placeholder="email" type="text" value="">
       <p class="field-description">Password</p>
-      <input name="credentials[password]" placeholder="password" type="password" value="">
+      <input class="field-input" name="credentials[password]" placeholder="password" type="password" value="">
       <br>
-      <input name="submit" type="submit" value="Sign in!">
+      <input class="submit-btn" name="submit" type="submit" value="Sign in!">
     </fieldset>
   </form>
 
@@ -63,7 +63,7 @@
     <fieldset>
       <legend>Sign out!</legend>
       <p id="sign-out-warning" class="password-warning">Error Signing Out</p>
-      <input name="submit" type="submit" value="Sign out!">
+      <input class="submit-btn" name="submit" type="submit" value="Sign out!">
     </fieldset>
   </form>
 
@@ -72,24 +72,21 @@
       <legend>Change Password</legend>
       <p id="change-password-error">Error changing password. Please try again.</p>
       <p class="field-description">Old Password</p>
-      <input name="passwords[old]" placeholder="Old Password" type="password">
+      <input class="field-input" name="passwords[old]" placeholder="Old Password" type="password">
       <p class="field-description">New Password</p>
-      <input name="passwords[new]" placeholder="New Password" type="password">
-      <br>
-      <input name="submit" type="submit" value="Change Password">
+      <input class="field-input" name="passwords[new]" placeholder="New Password" type="password">
+      <input class="submit-btn" name="submit" type="submit" value="Change Password">
     </fieldset>
   </form>
 
-
-
-  <form class="form tracker-form tracker" id="get-tracker-form" name="get-tracker-form">
+  <!-- <form class="form tracker-form tracker" id="get-tracker-form" name="get-tracker-form">
     <fieldset>
       <legend>Get Tracker Form</legend>
       <input name="submit" type="submit" value="View All Trackers">
     </fieldset>
-  </form>
+  </form> -->
 
-  <form class="form tracker-form tracker" id="show-tracker-form" name="show-tracker-form">
+  <!-- <form class="form tracker-form tracker" id="show-tracker-form" name="show-tracker-form">
     <fieldset>
       <legend>Show Trackers Form</legend>
       <p class="field-description">Tracker ID</p>
@@ -97,28 +94,28 @@
       <br>
       <input name="submit" type="submit" value="View Tracker">
     </fieldset>
-  </form>
+  </form> -->
 
   <form class="form tracker-form tracker" id="new-tracker-form" name="new-tracker-form">
+    <p id="new-form-error">Error creating form. Please try again.</p>
+
     <fieldset>
       <legend>Create Tracker Form</legend>
       <p class="field-description">First Name</p>
-      <input name="tracker[first_name]" placeholder="First Name" type="text">
-      <br>
+      <input class="field-input" name="tracker[first_name]" placeholder="First Name" type="text">
       <p class="field-description">Last Name</p>
-      <input name="tracker[last_name]" placeholder="Last Name" type="text">
-      <br>
+      <input class="field-input" name="tracker[last_name]" placeholder="Last Name" type="text">
       <p class="field-description">Grade</p>
-      <input name="tracker[grade]" placeholder="Grade" type="text">
-      <br>
-      <p class="field-description">School</p>
+      <input class="field-input" name="tracker[grade]" placeholder="Grade" type="text">
+      <p class="field-description">Comments</p>
       <!-- <input name="tracker[comments]" placeholder="Comments" type="text"> -->
-      <textarea name="tracker[comments]" placeholder="School"></textarea>
-      <input name="submit" id="create-tracker-btn" type="submit" value="Create Tracker">
+      <textarea class="field-input comments-input" name="tracker[comments]" placeholder="School"></textarea>
+      <br>
+      <input class="submit-btn" name="submit" id="create-tracker-btn" type="submit" value="Submit">
     </fieldset>
   </form>
 
-  <form class="form tracker-form tracker" id="delete-tracker-form" name="delete-tracker-form">
+  <!-- <form class="form tracker-form tracker" id="delete-tracker-form" name="delete-tracker-form">
     <fieldset>
       <legend>Delete Tracker Form</legend>
       <p class="field-description">Tracker ID</p>
@@ -126,28 +123,29 @@
       <br>
       <input name="submit" type="submit" value="Delete Tracker">
     </fieldset>
-  </form>
+  </form> -->
 
   <form class="form tracker-form tracker" id="update-tracker-form" name="update-tracker-form">
     <fieldset>
+      <p id="update-form-error">There has been an error updating the record.  Please try again.</p>
       <legend>Update Tracker Form</legend>
       <p class="field-description">Tracker ID</p>
       <input name="tracker[id]" id="update-tracker-id" placeholder="Tracker ID" type="hidden">
       <br>
       <p class="field-description">First Name</p>
-      <input class="fn-input" name="tracker[first_name]" placeholder="First Name" type="text">
+      <input class="fn-input field-input" name="tracker[first_name]" placeholder="First Name" type="text">
       <br>
       <p class="field-description">Last Name</p>
-      <input class="ln-input" name="tracker[last_name]" placeholder="Last Name" type="text">
+      <input class="ln-input field-input" name="tracker[last_name]" placeholder="Last Name" type="text">
       <br>
       <p class="field-description">Grade</p>
-      <input class="grade-input" name="tracker[grade]" placeholder="Grade" type="text">
+      <input class="grade-input field-input" name="tracker[grade]" placeholder="Grade" type="text">
       <br>
       <p class="field-description">Comments</p>
-      <textarea class="comments-input" name="tracker[comments]" placeholder="Comments"></textarea>
-      <!-- <input class="comments-input" name="tracker[comments]" placeholder="Comments" type="textarea"> -->
+      <textarea class="comments-input field-input" name="tracker[comments]" placeholder="Comments"></textarea>
       <br>
-      <input name="submit" type="submit" value="Update Tracker">
+      <!-- <input class="comments-input" name="tracker[comments]" placeholder="Comments" type="textarea"> -->
+      <input class="submit-btn" name="submit" type="submit" value="Submit">
     </fieldset>
   </form>
 
@@ -158,8 +156,9 @@
   <div class="dashboard-container tracker">
     <div class="dashboard-description">
       <p>Please make a selection below:</p>
-      <button class="dashboard-btn" id="show-records-btn">Show/Update Students Record</button>
-      <button class="dashboard-btn" id="create-record-btn">Create New Student Record</button>
+      <button class="dashboard-btn view-dash-desktop" id="show-records-btn">View Dashboard</button>
+      <button class="dashboard-btn view-dash-mobile" id="show-records-btn">View <br> Dashboard</button>
+      <button class="dashboard-btn" id="create-record-btn">Create Student Record</button>
     </div>
   </div>
 

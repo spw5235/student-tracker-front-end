@@ -4,6 +4,12 @@ const api = require('./api');
 const store = require('../store');
 const logic = require('./logic');
 
+// Button jQuery
+
+// Success/Fail Handler
+
+$("#show-records-btn").html()
+
 const success = (data) => {
   console.log('success completed');
   console.log(data);
@@ -54,6 +60,8 @@ const signOutSuccess = function() {
   $(".tracker").hide();
   $(".credential-form").hide();
   $(".table-generated-container").hide();
+  $("#table-gen-show").remove();
+  $("#table-gen-id").remove();
 };
 
 const signOutFailure = function() {
@@ -75,6 +83,7 @@ const showTrackerSuccess = (data) => {
   console.log(data);
   $("#table-gen-id").remove();
   $("#table-gen-id");
+  $("#show-records-btn").show();
 };
 
 const showTrackerFailure = (data) => {
@@ -97,6 +106,7 @@ const createTrackerSuccess = (data) => {
 const createTrackerFailure = (data) => {
   console.log('create tracker failure');
   console.log(data);
+  $("#new-form-error").show();
 };
 
 const deleteTrackerSuccess = (data) => {
@@ -116,10 +126,12 @@ const updateTrackerSuccess = (data) => {
   $("#show-records-btn").show();
   $("#table-gen-id").remove();
   let form = document.getElementById("update-tracker-form");
+  $("#update-form-error").hide();
   form.reset();
 };
 
 const updateTrackerFailure = (data) => {
+  $("#update-form-error").show();
   console.log('update tracker failure');
   console.log(data);
 };
