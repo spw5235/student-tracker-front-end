@@ -124,38 +124,53 @@ const onUpdateTracker = function(event) {
 };
 
 const onClickSignUpButton = function() {
+  $("#sign-out-success").hide();
   $("#sign-up").toggle();
   $("#sign-in").hide();
+  $(".alert").hide();
 };
 
 const onClickSignInButton = function() {
+  $("#sign-out-success").hide();
   $("#sign-in").toggle();
   $("#sign-up").hide();
+  $(".alert").hide();
 };
 
-const onClickChangePasswordButton = function() {
+const onClickChangePasswordBtn = function() {
   $("#change-password").toggle();
+  $("#update-form-error").hide();
+  $("#table-gen-id").remove();
+  $("#new-tracker-form").hide();
+  $("#table-gen-show").remove();
+  $(".dashboard-btn").show();
+  $("#update-tracker-form").hide();
+};
+
+const onDashButtons = function() {
+  $("#update-form-error").hide();
+  $("#table-gen-show").remove();
+  $("#update-form-error").hide();
+  $("#change-password").hide();
 };
 
 const onCreateNewRecordBtn = function() {
+  onDashButtons();
   $("#new-tracker-form").show();
   $("#show-records-btn").show();
   $("#create-record-btn").hide();
   $(".table-generated-container").hide();
   $("#table-gen-id").remove();
   $("#update-tracker-form").hide();
-  $("#table-gen-show").remove();
-  $("#update-form-error").show();
   $(".comments-input").text('');
 };
 
 const onShowRecordsBtn = function() {
+  onDashButtons();
   $("#create-record-btn").show();
   $("#show-records-btn").hide();
   $("#new-tracker-form").hide();
-  $(".table-generated").show();
-  $("#table-gen-show").remove();
-  $("#update-form-error").hide();
+  $(".table-generated-container").show();
   $("#update-tracker-form").hide();
 };
 
@@ -173,7 +188,7 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword);
   $('#sign-up-btn').on('click', onClickSignUpButton);
   $('#sign-in-btn').on('click', onClickSignInButton);
-  $('#change-password-btn').on('click', onClickChangePasswordButton);
+  $('#change-password-btn').on('click', onClickChangePasswordBtn);
   $('#sign-out-btn').on('click', onSignOut);
   $('#create-record-btn').on('click', onCreateNewRecordBtn);
   $('#show-records-btn').on('click', onGetTrackers);

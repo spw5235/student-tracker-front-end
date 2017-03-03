@@ -30,16 +30,23 @@ const signInSuccess = function() {
   $("#sign-up-success").show();
   $('#create-record-btn').show();
   $('#show-records-btn').show();
+  $(".alert").hide();
+  $("#sign-up-success").hide();
 };
 
 const signInFailure = function() {
-  $("#sign-in-warning").show();
+  $("#sign-in-warning").hide();
 };
 
 const signUpSuccess = function() {
   $(".password-warning").hide();
   $("#sign-up-warning").hide();
-  $(".sign-in").show();
+  $("#sign-up").hide();
+  $("#sign-in").show();
+  $(".alert").hide();
+  $("#sign-up-success").show();
+  $("#sign-up-btn").hide();
+  $("#sign-in-btn").hide();
 };
 
 const signUpFailure = function() {
@@ -48,6 +55,8 @@ const signUpFailure = function() {
 
 const changePasswordSuccess = function() {
   console.log("change password success");
+  $("#change-password").hide();
+  $(".alert").hide();
 };
 
 const changePasswordFailure = function() {
@@ -66,6 +75,11 @@ const signOutSuccess = function() {
   $("#table-gen-id").remove();
   $("#new-tracker-form .field-input").val("");
   $("#sign-out-success").show();
+  $("#update-form-error").hide();
+  $("#change-password").hide();
+  $(".alert").hide();
+  $("#sign-up-btn").show();
+  $("#sign-in-btn").show();
 };
 
 // To Hide Signout Warning when signing in or signing up
@@ -134,7 +148,9 @@ const showTrackerSuccess = (data) => {
   $("#table-gen-id").remove();
   $("#table-gen-id");
   $("#show-records-btn").show();
+  $("#update-form-error").hide();
   updateButtonInShow();
+  $(".alert").hide();
 };
 
 const showTrackerFailure = (data) => {
@@ -150,6 +166,7 @@ const createTrackerSuccess = (data) => {
   $("#new-tracker-form").hide();
   $("#create-record-btn").show();
   $("#table-gen-id").remove();
+  $(".alert").hide();
 
   // $("#create-setting-stud-id").attr("value", store.currentTrackerId);
 };
@@ -163,10 +180,12 @@ const createTrackerFailure = (data) => {
 const deleteTrackerSuccess = (data) => {
   console.log('delete tracker success');
   console.log(data);
+  $(".alert").hide();
 };
 
 const deleteTrackerFailure = (data) => {
   console.log('delete tracker failure');
+
   console.log(data);
 };
 
@@ -177,8 +196,8 @@ const updateTrackerSuccess = (data) => {
   $("#show-records-btn").show();
   $("#table-gen-id").remove();
   let form = document.getElementById("update-tracker-form");
-  $("#update-form-error").hide();
   form.reset();
+  $(".alert").hide();
 };
 
 const updateTrackerFailure = (data) => {

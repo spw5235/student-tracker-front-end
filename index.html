@@ -22,7 +22,13 @@
   </div>
 
   <div class="warning-container">
-    <p id="sign-out-success" class="password-warning notification alert">You have successfully signed-out. Please login to start playing</p>
+    <p id="sign-out-success" class="password-warning notification alert">You have successfully signed-out. Please sign-in.</p>
+    <p id="sign-up-warning" class="password-warning warning alert">Error. Please Try Again.</p>
+    <p id="sign-in-success" class="password-warning notification alert">You have successfully signed in.</p>
+    <p id="sign-out-warning" class="password-warning warning alert">Error signing out</p>
+    <p id="change-password-error" class="password-warning warning alert">Error changing password. Please try again.</p>
+    <p id="sign-up-success" class="password-warning notification alert">You have successfully signed up. Please login to start playing</p>
+    <p id="sign-in-warning" class="password-warning notification alert">Error. Please Try Again.</p>
   </div>
 
   <div class="clearfix"></div>
@@ -30,7 +36,6 @@
   <form class="form credential-form" id="sign-up" name="sign-up">
     <fieldset>
       <legend>Sign up!</legend>
-      <p id="sign-up-warning" class="password-warning warning alert">Error. Please Try Again.</p>
       <p class="field-description">Email</p>
       <input name="credentials[email]" placeholder="email" type="text" value="">
       <p class="field-description">Password</p>
@@ -42,12 +47,9 @@
     </fieldset>
   </form>
 
-  <p id="sign-in-success" class="password-warning notification alert">You have successfully signed in.</p>
   <form class="form credential-form" id="sign-in" name="sign-in">
     <fieldset>
       <legend>Sign in!</legend>
-      <p id="sign-up-success" class="password-warning notification alert">You have successfully signed up. Please login to start playing</p>
-      <p id="sign-in-warning" class="password-warning notification alert">Error. Please Try Again.</p>
       <p class="field-description">Email</p>
       <input class="field-input" name="credentials[email]" placeholder="email" type="text" value="">
       <p class="field-description">Password</p>
@@ -59,7 +61,6 @@
 
   <p class="warning" id="post-change-warning">Alert: Your password has been changed. For security purposes, you have been signed-out. Please sign-in to continue playing</p>
 
-  <p id="sign-out-warning" class="password-warning warning alert">Error Signing Out</p>
   <form class="form credential-form" id="sign-out" name="sign-out">
     <fieldset>
       <legend>Sign out!</legend>
@@ -70,7 +71,6 @@
   <form class="form credential-form" id="change-password" name="change-password">
     <fieldset>
       <legend>Change Password</legend>
-      <p id="change-password-error" class="password-warning warning alert">Error changing password. Please try again.</p>
       <p class="field-description">Old Password</p>
       <input class="field-input" name="passwords[old]" placeholder="Old Password" type="password">
       <p class="field-description">New Password</p>
