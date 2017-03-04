@@ -22,76 +22,83 @@ const failure = (error) => {
 
 const signInSuccess = function() {
   console.log('sign-in success');
+  $(".dashboard-description").show();
   $(".prelogin").hide();
   $(".postlogin").show();
-  $(".password-warning").hide();
+  // $(".password-warning").hide();
   $("#sign-in").hide();
   $(".dashboard-container").show();
-  $("#sign-up-success").show();
+  // $("#sign-up-success").show();
   $('#create-record-btn').show();
   $('#show-records-btn').show();
   $(".alert").hide();
-  $("#sign-up-success").hide();
+  // $("#sign-up-success").hide();
+  $("#sign-in-success").show();
 };
 
 const signInFailure = function() {
-  $("#sign-in-warning").hide();
+  // $("#sign-in-warning").hide();
+  // $(".warning").hide();
+  // $("#sign-in-success").hide();
+  $(".alert").hide();
+  $("#sign-in-warning").show();
 };
 
 const signUpSuccess = function() {
-  $(".password-warning").hide();
-  $("#sign-up-warning").hide();
+  $(".alert").hide();
+  // $("#sign-up-warning").hide();
   $("#sign-up").hide();
   $("#sign-in").show();
-  $(".alert").hide();
+  // $(".warning").hide();
   $("#sign-up-success").show();
   $("#sign-up-btn").hide();
   $("#sign-in-btn").hide();
 };
 
 const signUpFailure = function() {
+  $(".alert").hide();
   $("#sign-up-warning").show();
 };
 
 const changePasswordSuccess = function() {
   console.log("change password success");
-  $("#change-password").hide();
   $(".alert").hide();
+  $("#change-password").hide();
+  $("#change-password-success").show();
 };
 
 const changePasswordFailure = function() {
   console.log("change password failure");
+  $(".alert").hide();
+  $("#change-password-error").show();
 };
 
 const signOutSuccess = function() {
   console.log("signout success");
+  $(".alert").hide();
   $(".prelogin").show();
   $(".postlogin").hide();
   $(".tracker-form").hide();
-  $(".tracker").hide();
+  $(".dashboard-description").hide();
   $(".credential-form").hide();
-  $(".table-generated-container").hide();
-  $("#table-gen-show").remove();
-  $("#table-gen-id").remove();
+  // $(".table-generated-container").hide();
   $("#new-tracker-form .field-input").val("");
   $("#sign-out-success").show();
-  $("#update-form-error").hide();
   $("#change-password").hide();
-  $(".alert").hide();
-  $("#sign-up-btn").show();
-  $("#sign-in-btn").show();
+  $("#table-gen-id").remove();
+  $("#table-gen-show").remove();
 };
 
 // To Hide Signout Warning when signing in or signing up
 
 const signOutFailure = function() {
   console.log("signout failure");
+  $(".alert").hide();
+  $("#sign-out-warning").show();
 };
-
 
 ///////////////////////
 // Tracker UI
-
 
 const getTrackerFailure = (data) => {
   console.log('get tracker failure');
@@ -109,11 +116,11 @@ const updateRow = function() {
     console.log(store.btnUpdateCommentText);
     $("#show-records-btn").show();
     $("#update-tracker-form").show();
-    $("#table-gen-id").remove();
     $(".fn-input").val(store.btnUpdateFnText);
     $(".ln-input").val(store.btnUpdateLnText);
     $(".grade-input").val(store.btnUpdateGradeText);
     $(".comments-input").text(store.btnUpdateCommentText);
+    $("#table-gen-id").remove();
    });
 };
 
@@ -133,24 +140,24 @@ const updateButtonInShow = function() {
     store.showUpdateGradeText = gradeUpdate;
     store.showUpdateCommentText = $(".td-gen-comments-show").text();
     $("#update-tracker-form").show();
-    $(".table-generated").hide();
+    // $(".table-generated").hide();
     $(".fn-input").val(store.showUpdateFirstName);
     $(".ln-input").val(store.showUpdateLastName);
     $(".grade-input").val(store.showUpdateGradeText);
     $(".comments-input").text(store.showUpdateCommentText);
     $("#table-gen-show").remove();
+    // $("#table-gen-id").remove();
   });
 };
 
 const showTrackerSuccess = (data) => {
   console.log('show tracker success');
   console.log(data);
-  $("#table-gen-id").remove();
-  $("#table-gen-id");
   $("#show-records-btn").show();
   $("#update-form-error").hide();
   updateButtonInShow();
-  $(".alert").hide();
+  $(".warning").hide();
+  // $("#table-gen-show").remove();
 };
 
 const showTrackerFailure = (data) => {
@@ -165,8 +172,7 @@ const createTrackerSuccess = (data) => {
   form.reset();
   $("#new-tracker-form").hide();
   $("#create-record-btn").show();
-  $("#table-gen-id").remove();
-  $(".alert").hide();
+  $(".warning").hide();
 
   // $("#create-setting-stud-id").attr("value", store.currentTrackerId);
 };
@@ -180,7 +186,7 @@ const createTrackerFailure = (data) => {
 const deleteTrackerSuccess = (data) => {
   console.log('delete tracker success');
   console.log(data);
-  $(".alert").hide();
+  $(".warning").hide();
 };
 
 const deleteTrackerFailure = (data) => {
@@ -194,10 +200,9 @@ const updateTrackerSuccess = (data) => {
   console.log(data);
   $("#update-tracker-form").hide();
   $("#show-records-btn").show();
-  $("#table-gen-id").remove();
   let form = document.getElementById("update-tracker-form");
   form.reset();
-  $(".alert").hide();
+  $(".warning").hide();
 };
 
 const updateTrackerFailure = (data) => {
@@ -225,7 +230,9 @@ const showRow = function() {
     })
     .done(showTrackerSuccess)
     .fail(showTrackerFailure);
+    $("#table-gen-id").remove();
   });
+
 };
 
 const deleteRow = function() {

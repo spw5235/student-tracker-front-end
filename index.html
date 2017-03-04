@@ -22,13 +22,19 @@
   </div>
 
   <div class="warning-container">
-    <p id="sign-out-success" class="password-warning notification alert">You have successfully signed-out. Please sign-in.</p>
+    <p id="sign-out-success" class="notification alert">You have successfully signed-out. Please sign-in.</p>
     <p id="sign-up-warning" class="password-warning warning alert">Error. Please Try Again.</p>
     <p id="sign-in-success" class="password-warning notification alert">You have successfully signed in.</p>
-    <p id="sign-out-warning" class="password-warning warning alert">Error signing out</p>
+    <p id="sign-out-warning" class="password-warning warning alert">Error signing out.  Please close your browser and try again.</p>
     <p id="change-password-error" class="password-warning warning alert">Error changing password. Please try again.</p>
+    <p id="change-password-success" class="password-warning notification alert">You have successfully changed your password.</p>
     <p id="sign-up-success" class="password-warning notification alert">You have successfully signed up. Please login to start playing</p>
     <p id="sign-in-warning" class="password-warning notification alert">Error. Please Try Again.</p>
+    <!-- <p class="warning" id="post-change-warning">Alert: Your password has been changed. For security purposes, you have been signed-out. Please sign-in to continue playing</p> -->
+    <p id="new-form-error" class="password-warning warning alert">Error creating form. Please try again.</p>
+    <p class="password-warning warning alert" id="update-form-error">There has been an error updating the record.  Please try again.</p>
+
+
   </div>
 
   <div class="clearfix"></div>
@@ -58,8 +64,6 @@
       <input class="submit-btn" name="submit" type="submit" value="Sign in!">
     </fieldset>
   </form>
-
-  <p class="warning" id="post-change-warning">Alert: Your password has been changed. For security purposes, you have been signed-out. Please sign-in to continue playing</p>
 
   <form class="form credential-form" id="sign-out" name="sign-out">
     <fieldset>
@@ -96,7 +100,6 @@
     </fieldset>
   </form> -->
 
-  <p id="new-form-error" class="password-warning warning alert">Error creating form. Please try again.</p>
   <form class="form tracker-form tracker" id="new-tracker-form" name="new-tracker-form">
     <fieldset>
       <legend>Create Tracker Form</legend>
@@ -124,7 +127,6 @@
     </fieldset>
   </form> -->
 
-  <p class="password-warning warning alert" id="update-form-error">There has been an error updating the record.  Please try again.</p>
   <form class="form tracker-form tracker" id="update-tracker-form" name="update-tracker-form">
     <fieldset>
       <legend>Update Tracker Form</legend>
