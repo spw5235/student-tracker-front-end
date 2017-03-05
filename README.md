@@ -1,8 +1,8 @@
-# Counselor Records
+# Counselor NotePad
 
 ## Application Overview
 
-School Counselors are responsible for keeping detailed notes on students.  Therefore, Counselor Records (formerly BOSS), was created so that counselors can keep detailed and organized notes on a student in one location.  This application not only allows the user to create and view notes, but updates can be made when needed and the record can easily be deleted.
+School Counselors are responsible for keeping detailed notes on students.  Therefore, Counselor Notepad (formerly BOSS), was created so that counselors can keep detailed and organized notes on a student.  This application not only allows the user to create and view notes, but updates can be made when needed and the record can easily be deleted.
 
 Link to the live application: https://spw5235.github.io/boss-project-front-end/
 Link to the API Source:

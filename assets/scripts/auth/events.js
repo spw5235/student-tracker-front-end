@@ -50,9 +50,10 @@ const onGetTrackers = function(event) {
   event.preventDefault();
   api.getTrackers()
     .then((response) => {
-      let tableId = $('<table id="table-gen-id"></table>');
-      let tableRowDesc = $('<tr class="tg-tr-description"><td class="tg-td-description tg-id-hide">Student ID</td><td class="tg-td-description">First Name</td><td class="tg-td-description">Last Name</td><td class="tg-td-description">Grade</td><td class="tg-td-comment tg-id-hide">Comments</td><td class="tg-td-description">View</td><td class="tg-td-description">Update</td><td class="tg-td-description">Delete</td></tr>');
-      $(tableId).append(tableRowDesc);
+      let tableId = $('<table id="table-gen-id" class="table-striped"></table>');
+      let tableBody = $("<tbody></tbody>");
+      let tableRowDesc = $('<tr class="tg-tr-description"><th class="tg-td-description tg-id-hide">Student ID</td><th class="tg-td-description">First Name</td><th class="tg-td-description">Last Name</td><th class="tg-td-description">Grade</td><th class="tg-td-comment tg-id-hide">Comments</td><th class="tg-td-description">View</td><th class="tg-td-description">Update</td><th class="tg-td-description">Delete</td></tr>');
+      tableBody.append(tableRowDesc);
       let newGenRow;
       store.numOfStudents = response.trackers.length;
       for (let i = 0; i < store.numOfStudents; i++) {
@@ -65,8 +66,9 @@ const onGetTrackers = function(event) {
         let textclass = studObjectId.toString();
         newGenRow = logic.createRowHTML(studObjectId, studObjectFirstName, studObjectLastName, studObjectGrade, studObjectComment);
         $("tg-td-details").addClass(textclass);
-        tableId.append(newGenRow);
+        tableBody.append(newGenRow);
       }
+      tableId.append(tableBody);
       $(".table-generated").append(tableId);
     })
     .done(ui.getTrackerSuccess)
@@ -179,6 +181,11 @@ const onShowRecordsBtn = function() {
 };
 
  $('#show-records-btn').on('click', onShowRecordsBtn);
+ // $('#sign-in-btn').on('click', onClickSignInButton());
+
+//  $( "#sign-in-btn" ).on( "click", function() {
+//   onClickSignInButton();
+// });
 
 const addHandlers = () => {
   $('#get-tracker-form').on('submit', onGetTrackers);
@@ -191,12 +198,12 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut);
   $('#change-password').on('submit', onChangePassword);
   $('#sign-up-btn').on('click', onClickSignUpButton);
-  $('#sign-in-btn').on('click', onClickSignInButton);
   $('#change-password-btn').on('click', onClickChangePasswordBtn);
   $('#sign-out-btn').on('click', onSignOut);
   $('#create-record-btn').on('click', onCreateNewRecordBtn);
   $('#show-records-btn').on('click', onGetTrackers);
   $('.delete-button').on('click', onGetTrackers);
+  $('#sign-in-btn').on('click', onClickSignInButton);
   // $('.view-button').on('click', eventsjs.showRow);
 
   // $('.table-gen-btn-delete').on('click', onDeleteTracker);

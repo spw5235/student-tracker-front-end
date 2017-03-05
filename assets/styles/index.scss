@@ -2,47 +2,69 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 body {
+  font-family: 'Slabo 27px', serif;
+  font-size: 16px;
   margin: 10px;
   padding: 10px;
 }
 
-hr#section {
-  color:red;
-  background-color:red;
-}
-// Navigation
-
-.nav-btn {
-  background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  border-radius: 28px;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 20px;
-  padding: 10px 20px;
-  text-decoration: none;
+.homepage-desc-container {
+  padding: 5px 10px;
 }
 
-.nav-btn:hover {
-  background: #3cb0fd;
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
-  text-decoration: none;
+.homepage-desc-container img {
+  float: right;
+  max-width: 30%;
+  margin: 8px;
 }
 
-.nav-container {
+.logo-text-container {
+  float: left;
+}
+
+.logo-text-container p {
+  font-family: 'Shadows Into Light', cursive;
+  margin-top: 15px;
+  font-size: 30px;
+  color: #2f4779;
+  width: 300px;
   text-align: center;
-  margin: 10px;
 }
+
+.nav-button-container {
+  float: right;
+}
+
+.alert {
+  clear: both;
+}
+//
+// .nav-btn {
+//   background: #3498db;
+//   background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+//   background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+//   background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+//   background-image: -o-linear-gradient(top, #3498db, #2980b9);
+//   background-image: linear-gradient(to bottom, #3498db, #2980b9);
+//   -webkit-border-radius: 28;
+//   -moz-border-radius: 28;
+//   border-radius: 28px;
+//   font-family: Arial;
+//   color: #ffffff;
+//   font-size: 20px;
+//   padding: 10px 20px;
+//   text-decoration: none;
+// }
+// .nav-btn:hover {
+//   background: #3cb0fd;
+//   background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+//   background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+//   background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+//   background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+//   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+//   text-decoration: none;
+// }
+
 // clearfix
 
 .clearfix:after {
@@ -53,7 +75,6 @@ hr#section {
   clear: both;
 }
 // Forms
-
 // Initial Hide
 #change-password,
 #change-password-btn,
@@ -82,20 +103,47 @@ hr#section {
   display: none;
 }
 
-// Generated table
+
+
+// Generated Dashboard Table
 #table-gen-id {
-  width:100%;
-  border: 1px solid black;
+  width: 100%;
+  border: 1px solid #3b5998;
+  // border: 1px solid black;
   text-align: center;
+}
+
+#table-gen-id tr {
+  height: 40px;
+}
+
+#table-gen-id > tbody > tr:nth-of-type(odd) {
+  background-color: #f7f7f7;
+}
+
+#table-gen-id > tbody > tr:nth-of-type(even) {
+  background-color: #dfe3ee;
 }
 
 #table-gen-id td {
   width: 16%;
-  border: 1px solid black;
+  // border: 1px solid black;
+}
+#table-gen-id th {
+  width: 16%;
+  text-align: center;
+  // border: 1px solid black;
 }
 
+#table-gen-id > tbody > .tg-tr-description:nth-of-type(odd) {
+  color: white;
+  background-color: #3b5998;
+}
+
+// Generated View Table
+
 #table-gen-show {
-  width:80%;
+  width: 80%;
   border: 1px solid black;
   text-align: center;
 }
@@ -105,21 +153,24 @@ hr#section {
   border: 1px solid black;
 }
 
-.comments-input, {
+,
+.comments-input {
   width: 80%;
   height: 150px;
 }
 
-#new-form-error, #update-form-error {
+#new-form-error,
+#update-form-error {
   display: none;
 }
-
 //hides student id column
 .tg-id-hide {
   display: none;
 }
 
-.tg-td-details-view, .tg-td-details-update, .tg-td-details-delete {
+.tg-td-details-delete,
+.tg-td-details-update,
+.tg-td-details-view {
   text-align: center;
 }
 
@@ -129,8 +180,9 @@ hr#section {
 }
 
 .form {
-display: inline-block;
-text-align: center;
+  clear: both;
+  display: inline-block;
+  text-align: center;
 }
 
 #table-gen-show {
@@ -155,30 +207,30 @@ text-align: center;
 }
 
 .field-description {
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
-
 // Form Styling
-
-input[type=text], select {
-    width: 50%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+input[type=text],
+select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-input[type=password], select {
-    width: 50%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+input[type=password],
+select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 input[type=submit] {
@@ -192,14 +244,32 @@ input[type=submit] {
   cursor: pointer;
 }
 
-.nav-container button {
-  width: 165px;
-  background-color: blue;
-  color: white;
-  padding: 10px 14px;
-  margin: 8px 8px;
-  border: none;
-  border-radius: 4px;
+// Old Button Styling - prebootstrap
+
+.nav-container {
+  text-align: center;
+  margin: 10px;
+  background-color: #adbad5;
+  height: 65px;
+}
+
+.nav-button-container button {
+  font-size: 16px;
+  width: 150px;
+  background-color: #3b5998;
+  // color: white;
+  padding: 8px 14px;
+  margin: 12px;
+  // border: none;
+  // border-radius: 4px;
+  cursor: pointer;
+}
+
+.nav-button-container button:hover {
+  background-color: #f7f7f7;
+  color: #3b5998;
+  // border: none;
+  // border-radius: 4px;
   cursor: pointer;
 }
 
@@ -208,41 +278,46 @@ input[type=submit] {
   background-color: blue;
   color: white;
   padding: 10px 14px;
-  margin: 8px 8px;
+  margin: 8px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
 input[type=submit]:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
-
 // Update Btn on show
 .td-gen-update-show {
   text-align: center;
 }
-
 @media screen and (max-width: 750px) {
-    input[type=text], select {
-        width: 75%;
-    }
-    input[type=submit] {
-        width: 30%;
-    }
-    input[type=password], select {
-        width: 75%;
-    }
-}
+  input[type=text],
+  select {
+    width: 75%;
+  }
 
+  input[type=submit] {
+    width: 30%;
+  }
+
+  input[type=password],
+  select {
+    width: 75%;
+  }
+}
 @media screen and (max-width: 480px) {
-    input[type=text], select {
-        width: 100%;
-    }
-    input[type=submit] {
-        width: 45%;
-    }
-    input[type=password], select {
-        width: 100%;
-    }
+  input[type=text],
+  select {
+    width: 100%;
+  }
+
+  input[type=submit] {
+    width: 45%;
+  }
+
+  input[type=password],
+  select {
+    width: 100%;
+  }
 }

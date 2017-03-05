@@ -5,7 +5,6 @@ const store = require('../store');
 const logic = require('./logic');
 // const eventsjs = require('./events');
 
-
 // Success/Fail Handler
 
 // $("#show-records-btn").html();
@@ -34,6 +33,7 @@ const signInSuccess = function() {
   $(".alert").hide();
   // $("#sign-up-success").hide();
   $("#sign-in-success").show();
+  $(".homepage-desc-container").hide();
 };
 
 const signInFailure = function() {
@@ -87,6 +87,7 @@ const signOutSuccess = function() {
   $("#change-password").hide();
   $("#table-gen-id").remove();
   $("#table-gen-show").remove();
+  $(".homepage-desc-container").show();
 };
 
 // To Hide Signout Warning when signing in or signing up

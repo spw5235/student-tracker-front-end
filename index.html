@@ -2,40 +2,41 @@
 <html>
 
 <head>
-  <title>Student Tracker</title>
+  <title>Counselor Notepad</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
 </head>
 
 <body class="container-fluid">
   <div class="nav-container">
-    <!-- <img src="sign-up.png" alt="sign-up">
-  <img src="sign-in.png" alt="sign-in">
-  <img src="change-password-btn.png" alt="change password">
-  <img src="sign-out.png" alt="sign-out"> -->
-    <button class="login-button prelogin" id="sign-up-btn">Sign-Up</button>
-    <button class="login-button prelogin" id="sign-in-btn">Sign-in</button>
-    <button class="login-button postlogin" id="change-password-btn">Change Password</button>
-    <button class="login-button postlogin" id="sign-out-btn">Sign-out</button>
+    <div class="logo-text-container">
+      <p>Counselor Notepad</p>
+    </div>
+    <div class="nav-button-container">
+      <button class="login-button prelogin btn btn-primary" id="sign-up-btn">Sign-Up</button>
+      <button class="login-button prelogin btn btn-primary" id="sign-in-btn">Sign-in</button>
+      <button class="login-button postlogin btn btn-primary" id="change-password-btn">Change Password</button>
+      <button class="login-button postlogin btn btn-primary" id="sign-out-btn">Sign-out</button>
+    </div>
   </div>
-
   <div class="warning-container">
     <p id="sign-out-success" class="notification alert">You have successfully signed-out. Please sign-in.</p>
     <p id="sign-up-warning" class="password-warning warning alert">Error. Please Try Again.</p>
     <p id="sign-in-success" class="password-warning notification alert">You have successfully signed in.</p>
-    <p id="sign-out-warning" class="password-warning warning alert">Error signing out.  Please close your browser and try again.</p>
+    <p id="sign-out-warning" class="password-warning warning alert">Error signing out. Please close your browser and try again.</p>
     <p id="change-password-error" class="password-warning warning alert">Error changing password. Please try again.</p>
     <p id="change-password-success" class="password-warning notification alert">You have successfully changed your password.</p>
     <p id="sign-up-success" class="password-warning notification alert">You have successfully signed up. Please login to start playing</p>
     <p id="sign-in-warning" class="password-warning notification alert">Error. Please Try Again.</p>
     <!-- <p class="warning" id="post-change-warning">Alert: Your password has been changed. For security purposes, you have been signed-out. Please sign-in to continue playing</p> -->
     <p id="new-form-error" class="password-warning warning alert">Error creating form. Please try again.</p>
-    <p class="password-warning warning alert" id="update-form-error">There has been an error updating the record.  Please try again.</p>
+    <p class="password-warning warning alert" id="update-form-error">There has been an error updating the record. Please try again.</p>
   </div>
-
-  <div class="clearfix"></div>
   <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
   <form class="form credential-form" id="sign-up" name="sign-up">
     <fieldset>
@@ -80,6 +81,23 @@
       <input class="submit-btn" name="submit" type="submit" value="Change Password">
     </fieldset>
   </form>
+
+
+
+  <!-- HOMEPAGE DESCRIPTION -->
+  <div class="homepage-desc-container">
+    <h1>Counselor Notepad</h1>
+    <img src="./assets/images/sc-img.jpg" alt="school counselor">
+    <p class="hompage-desc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque bibendum, neque nec molestie sodales, sem nulla commodo sem, at gravida diam felis id leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+      Donec tempor diam ac massa venenatis interdum. Maecenas vehicula, velit non ultrices rutrum, massa neque interdum turpis, ut iaculis dolor lorem ut risus. Mauris dapibus pretium commodo. Mauris lacinia euismod metus eget ullamcorper. Ut molestie
+      pretium nulla, ut ultricies risus finibus quis. Vestibulum ultrices neque ac sapien faucibus, sed cursus ipsum placerat. Morbi eget elit non odio hendrerit pretium. Nullam mollis lorem varius, rhoncus nulla et, vehicula nisi. Praesent tincidunt
+      varius mauris, sit amet volutpat tellus eleifend vitae. Aliquam nec arcu leo. Nullam ut magna sed nisi pretium blandit. Morbi at urna at turpis elementum ullamcorper sit amet in nunc. Vivamus quis massa at lacus placerat aliquet vel nec justo. Vestibulum
+      ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+    <p class="hompage-desc-text">Aenean convallis tempor odio, quis rutrum diam gravida vel. Proin vitae ligula id ex gravida blandit id ac odio. Sed sit amet maximus nunc. Sed tincidunt, eros ut efficitur euismod, purus mauris aliquet neque, pretium eleifend massa orci eget tortor.
+      Mauris gravida ante magna, ut viverra tortor elementum tempor. Morbi aliquam porttitor risus quis blandit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur nec nulla vitae purus efficitur varius nec
+      non lorem. Maecenas velit metus, posuere non ipsum et, ultricies ultricies lectus. Aliquam pretium ullamcorper hendrerit. Aliquam dignissim aliquam hendrerit. Suspendisse lacinia pharetra massa, in luctus velit. Integer eu neque ornare, sollicitudin
+      eros ut, sagittis dolor. Morbi mi ipsum, congue nec porta eget, porttitor quis mi. Fusce tincidunt odio dui, eu vehicula dui sagittis at. Nunc fermentum eget mi a feugiat.</p>
+  </div>
 
   <!-- <form class="form tracker-form tracker" id="get-tracker-form" name="get-tracker-form">
     <fieldset>
@@ -148,9 +166,9 @@
     </fieldset>
   </form>
 
-    <div class="table-generated"></div>
+  <div class="table-generated"></div>
 
-    <div class="show-table-generated-container"></div>
+  <div class="show-table-generated-container"></div>
 
   <div class="dashboard-container tracker">
     <div class="dashboard-description">
