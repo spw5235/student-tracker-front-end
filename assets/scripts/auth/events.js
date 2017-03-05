@@ -214,7 +214,6 @@ const addHandlers = () => {
   $('#show-records-btn').on('click', onGetTrackers);
   $('.delete-button').on('click', onGetTrackers);
   $('#sign-in-btn').on('click', onClickSignInButton);
-  // $('.view-button').on('click', eventsjs.showRow);
 
   // $('.table-gen-btn-delete').on('click', onDeleteTracker);
   // $( ".delete-button" ).on( "click", function() {

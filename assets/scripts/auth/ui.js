@@ -260,7 +260,7 @@ const showRow = function() {
     })
     .done(showTrackerSuccess)
     .fail(showTrackerFailure);
-    $("#create-record-btn").show();
+    // $("#create-record-btn").show();
     $("#h1-dashboard-table").remove();
     $("#table-gen-id").remove();
     $(".h1-title").show();
