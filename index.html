@@ -7,7 +7,7 @@
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
   <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
 </head>
@@ -17,6 +17,9 @@
     <div class="logo-text-container">
       <p>Counselor Notepad</p>
     </div>
+    <div class="insert-mobile-clearfix">
+      <div class="clearfix mobile-clearfix"></div>
+    </div>
     <div class="nav-button-container">
       <button class="login-button prelogin btn btn-primary" id="sign-up-btn">Sign-Up</button>
       <button class="login-button prelogin btn btn-primary" id="sign-in-btn">Sign-in</button>
@@ -24,17 +27,18 @@
       <button class="login-button postlogin btn btn-primary" id="sign-out-btn">Sign-out</button>
     </div>
   </div>
+  <div class="clearfix mobile-clearfix"></div>
   <div class="warning-container">
-    <p id="sign-out-success" class="notification alert">You have successfully signed-out. Please sign-in.</p>
+    <p id="sign-out-success" class="notification alert">You have successfully signed-out.</p>
     <p id="sign-up-warning" class="password-warning warning alert">Error. Please Try Again.</p>
-    <p id="sign-in-success" class="password-warning notification alert">You have successfully signed in.</p>
-    <p id="sign-out-warning" class="password-warning warning alert">Error signing out. Please close your browser and try again.</p>
+    <p id="sign-in-success" class="password-warning notification alert">You have successfully signed-in.</p>
+    <p id="sign-out-warning" class="password-warning warning alert">Error signing-out. Please close your browser and try again.</p>
     <p id="change-password-error" class="password-warning warning alert">Error changing password. Please try again.</p>
     <p id="change-password-success" class="password-warning notification alert">You have successfully changed your password.</p>
-    <p id="sign-up-success" class="password-warning notification alert">You have successfully signed up. Please login to start playing</p>
-    <p id="sign-in-warning" class="password-warning notification alert">Error. Please Try Again.</p>
+    <p id="sign-up-success" class="password-warning notification alert">You have successfully signed-up. Please sign-in to continue</p>
+    <p id="sign-in-warning" class="password-warning notification alert">Error. Please try again.</p>
     <!-- <p class="warning" id="post-change-warning">Alert: Your password has been changed. For security purposes, you have been signed-out. Please sign-in to continue playing</p> -->
-    <p id="new-form-error" class="password-warning warning alert">Error creating form. Please try again.</p>
+    <p id="new-form-error" class="password-warning warning alert">Error creating note. Please try again.</p>
     <p class="password-warning warning alert" id="update-form-error">There has been an error updating the record. Please try again.</p>
   </div>
   <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
@@ -118,14 +122,14 @@
 
   <form class="form tracker-form tracker" id="new-tracker-form" name="new-tracker-form">
     <fieldset>
-      <legend>Create Tracker Form</legend>
+      <legend>Create Student Note</legend>
       <p class="field-description">First Name</p>
       <input class="field-input" name="tracker[first_name]" placeholder="First Name" type="text">
       <p class="field-description">Last Name</p>
       <input class="field-input" name="tracker[last_name]" placeholder="Last Name" type="text">
       <p class="field-description">Grade</p>
       <input class="field-input" name="tracker[grade]" placeholder="Grade" type="text">
-      <p class="field-description">Comments</p>
+      <p class="field-description">Note</p>
       <!-- <input name="tracker[comments]" placeholder="Comments" type="text"> -->
       <textarea class="field-input comments-input" name="tracker[comments]" placeholder="School"></textarea>
       <br>
@@ -145,8 +149,7 @@
 
   <form class="form tracker-form tracker" id="update-tracker-form" name="update-tracker-form">
     <fieldset>
-      <legend>Update Tracker Form</legend>
-      <p class="field-description">Tracker ID</p>
+      <legend>Update Student Note</legend>
       <input name="tracker[id]" id="update-tracker-id" placeholder="Tracker ID" type="hidden">
       <br>
       <p class="field-description">First Name</p>
@@ -158,7 +161,7 @@
       <p class="field-description">Grade</p>
       <input class="grade-input field-input" name="tracker[grade]" placeholder="Grade" type="text">
       <br>
-      <p class="field-description">Comments</p>
+      <p class="field-description">Note</p>
       <textarea class="comments-input field-input" name="tracker[comments]" placeholder="Comments"></textarea>
       <br>
       <!-- <input class="comments-input" name="tracker[comments]" placeholder="Comments" type="textarea"> -->
@@ -174,7 +177,7 @@
     <div class="dashboard-description">
       <p>Please make a selection below:</p>
       <button class="dashboard-btn view-dash-desktop" id="show-records-btn">View Dashboard</button>
-      <button class="dashboard-btn" id="create-record-btn">Create Student Record</button>
+      <button class="dashboard-btn" id="create-record-btn">Create Note</button>
     </div>
   </div>
 

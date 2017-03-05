@@ -3,6 +3,21 @@
 const api = require('./api');
 const store = require('../store');
 const logic = require('./logic');
+
+// let screenWidth = $(window).width();
+// let mobileClearfix = $('<div class="clearfix mobile-clearfix"></div>');
+//
+// if (screenWidth < 700) {
+//   $(".insert-mobile-clearfix").append(mobileClearfix);
+// };
+
+// const cleafixMobile = function() {
+//   if ( screenWidth > 700 ) {
+//     alert('below');
+//   }
+// };
+
+// cleafixMobile();
 // const eventsjs = require('./events');
 
 // Success/Fail Handler

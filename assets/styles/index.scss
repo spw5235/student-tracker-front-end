@@ -95,6 +95,7 @@ body {
 #sign-up-success,
 #sign-up-warning,
 #update-tracker-form,
+.mobile-clearfix,
 .dashboard-container {
   display: none;
 }
@@ -291,7 +292,8 @@ input[type=submit]:hover {
 .td-gen-update-show {
   text-align: center;
 }
-@media screen and (max-width: 750px) {
+
+@media screen and (max-width: 700px) {
   input[type=text],
   select {
     width: 75%;
@@ -305,7 +307,31 @@ input[type=submit]:hover {
   select {
     width: 75%;
   }
+
+  .nav-button-container {
+    text-align: center;
+    width: 100%;
+  }
+
+  .logo-text-container {
+    width: 100%;
+    text-align: center;
+  }
+
+  .logo-text-container p {
+    text-align: center;
+    width: 100%;
+  }
+
+  .homepage-desc-container img {
+    width: 50%;
+  }
+
+  .homepage-desc-container {
+    clear: both;
+  }
 }
+
 @media screen and (max-width: 480px) {
   input[type=text],
   select {
