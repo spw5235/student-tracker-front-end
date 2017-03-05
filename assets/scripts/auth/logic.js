@@ -19,9 +19,9 @@ const createRowHTML = function(tdIDtxt, TdFntxt, tdLntxt, tdGradetxt, tdCommentT
   let tdComment = $('<td class="tg-td-comment tg-id-hide"></td>');
   tdComment.text(tdCommentTxt);
 
-  let tdViewBtn = $('<button class="view-button">View</button>');
-  let tdUpdateBtn = $('<button class="update-button">Update</button>');
-  let tdDeleteBtn = $('<button class="delete-button">Delete</button>');
+  let tdViewBtn = $('<button type="button" class="view-button btn btn-secondary">View</button>');
+  let tdUpdateBtn = $('<button type="button" class="update-button btn btn-secondary">Update</button>');
+  let tdDeleteBtn = $('<button type="button" class="delete-button btn btn-secondary">Delete</button>');
 
   // let viewBtnClassName = "table-gen-btn-view";
   // let updateBtnClassName = "table-gen-btn-update";
@@ -62,7 +62,8 @@ const createRowHTML = function(tdIDtxt, TdFntxt, tdLntxt, tdGradetxt, tdCommentT
 };
 
 const createShowTable = function(TdFntxt, tdLntxt, tdGradetxt, tdCommentTxt) {
-  let tableId = $('<table id="table-gen-show"></table>');
+  let tableId = $('<table id="table-gen-show" class="table-striped"></table>');
+  let tableBody = $("<tbody></tbody>");
 
   let tableTrGeneratedName = $('<tr class="tr-gen-name-show"></tr>');
   let tableTrGeneratedGrade = $('<tr class="tr-gen-grade-show"></tr>');
@@ -74,7 +75,7 @@ const createShowTable = function(TdFntxt, tdLntxt, tdGradetxt, tdCommentTxt) {
   let tdComments= $('<td class="td-gen-comments-show"></td>');
 
   // Update Button part of show table
-  let showUpdateBtn = $('<button class="dashboard-btn" id="update-record-btn">Update Record</button>');
+  let showUpdateBtn = $('<button class="show-update-btn" id="update-record-btn">Update Record</button>');
   let tdUpdateBtn = $('<td class="td-gen-update-show"></td>');
   let updateBtnAppend = $(tdUpdateBtn).append(showUpdateBtn);
 
@@ -95,10 +96,11 @@ const createShowTable = function(TdFntxt, tdLntxt, tdGradetxt, tdCommentTxt) {
   tableGenAppend = $(tableTrGeneratedComments).append(tdComments);
   tableGenAppend = $(tableTrGeneratedUpdateBtn).append(updateBtnAppend);
 
-  tableGenAppend = $(tableId).append(tableTrGeneratedName);
-  tableGenAppend = $(tableId).append(tableTrGeneratedGrade);
-  tableGenAppend = $(tableId).append(tableTrGeneratedComments);
-  tableGenAppend = $(tableId).append(tableTrGeneratedUpdateBtn);
+  tableGenAppend = $(tableBody).append(tableTrGeneratedName);
+  tableGenAppend = $(tableBody).append(tableTrGeneratedGrade);
+  tableGenAppend = $(tableBody).append(tableTrGeneratedComments);
+  tableGenAppend = $(tableBody).append(tableTrGeneratedUpdateBtn);
+  tableGenAppend = $(tableId).append(tableBody);
 
 
   return tableGenAppend;

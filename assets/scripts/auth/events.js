@@ -148,6 +148,7 @@ const onClickChangePasswordBtn = function() {
   $(".dashboard-btn").show();
   $("#update-tracker-form").hide();
   $("#new-form-error").hide();
+  $(".h1-title").remove();
   // $("#change-password-btn").hide();
 };
 
@@ -157,6 +158,7 @@ const onDashButtons = function() {
   $("#table-gen-show").remove();
   $("#update-form-error").hide();
   $("#change-password").hide();
+  $(".h1-title").remove();
 };
 
 const onCreateNewRecordBtn = function() {
@@ -168,10 +170,12 @@ const onCreateNewRecordBtn = function() {
   $("#update-tracker-form").hide();
   $(".comments-input").text('');
   $("#table-gen-id").remove();
+  $(".h1-title").remove();
 };
 
 const onShowRecordsBtn = function() {
   onDashButtons();
+  $(".h1-show-table-generated").show();
   $("#create-record-btn").show();
   $("#show-records-btn").hide();
   $("#new-tracker-form").hide();

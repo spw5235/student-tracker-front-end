@@ -7,7 +7,7 @@
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
 </head>
@@ -52,7 +52,7 @@
       <p class="field-description">Confirm Password</p>
       <input name="credentials[password_confirmation]" placeholder="password confirmation" type="password" value="">
       <br>
-      <input class="submit-btn" name="submit" type="submit" value="Sign up!">
+      <input class="submit-btn" name="submit" type="submit" value="Submit">
     </fieldset>
   </form>
 
@@ -64,14 +64,14 @@
       <p class="field-description">Password</p>
       <input class="field-input" name="credentials[password]" placeholder="password" type="password" value="">
       <br>
-      <input class="submit-btn" name="submit" type="submit" value="Sign in!">
+      <input class="submit-btn" name="submit" type="submit" value="Submit">
     </fieldset>
   </form>
 
   <form class="form credential-form" id="sign-out" name="sign-out">
     <fieldset>
       <legend>Sign out!</legend>
-      <input class="submit-btn" name="submit" type="submit" value="Sign out!">
+      <input class="submit-btn" name="submit" type="submit" value="Submit">
     </fieldset>
   </form>
 
@@ -82,7 +82,7 @@
       <input class="field-input" name="passwords[old]" placeholder="Old Password" type="password">
       <p class="field-description">New Password</p>
       <input class="field-input" name="passwords[new]" placeholder="New Password" type="password">
-      <input class="submit-btn" name="submit" type="submit" value="Change Password">
+      <input class="submit-btn" name="submit" type="submit" value="Submit">
     </fieldset>
   </form>
 
@@ -122,7 +122,7 @@
 
   <form class="form tracker-form tracker" id="new-tracker-form" name="new-tracker-form">
     <fieldset>
-      <legend>Create Student Note</legend>
+      <h1 class="form-h1">Create Student Note</h1>
       <p class="field-description">First Name</p>
       <input class="field-input" name="tracker[first_name]" placeholder="First Name" type="text">
       <p class="field-description">Last Name</p>
@@ -149,7 +149,7 @@
 
   <form class="form tracker-form tracker" id="update-tracker-form" name="update-tracker-form">
     <fieldset>
-      <legend>Update Student Note</legend>
+      <h1 class="form-h1">Update Student Note</h1>
       <input name="tracker[id]" id="update-tracker-id" placeholder="Tracker ID" type="hidden">
       <br>
       <p class="field-description">First Name</p>
@@ -171,13 +171,14 @@
 
   <div class="table-generated"></div>
 
+  <!-- <h1 class="h1-title h1-show-table-generated">Student Note:</h1> -->
   <div class="show-table-generated-container"></div>
 
   <div class="dashboard-container tracker">
     <div class="dashboard-description">
-      <p>Please make a selection below:</p>
-      <button class="dashboard-btn view-dash-desktop" id="show-records-btn">View Dashboard</button>
-      <button class="dashboard-btn" id="create-record-btn">Create Note</button>
+      <!-- <p>Please make a selection below:</p> -->
+      <button type="button" class="dashboard-btn view-dash-desktop btn btn-outline-success" id="show-records-btn">View Dashboard</button>
+      <button type="button" class="dashboard-btn view-dash-desktop btn btn-outline-success" id="create-record-btn">Create Note</button>
     </div>
   </div>
 

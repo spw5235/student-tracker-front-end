@@ -8,6 +8,22 @@ body {
   padding: 10px;
 }
 
+.h1-title {
+  color: #3b5998;
+  padding: 5px;
+  margin: 20px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.form-h1 {
+  color: #3b5998;
+  padding: 5px;
+  margin: 20px;
+  text-align: center;
+  text-decoration: underline;
+}
+
 .homepage-desc-container {
   padding: 5px 10px;
 }
@@ -100,6 +116,10 @@ body {
   display: none;
 }
 
+.dashboard-container {
+  margin: 15px 0;
+}
+
 .alert {
   display: none;
 }
@@ -108,10 +128,11 @@ body {
 
 // Generated Dashboard Table
 #table-gen-id {
-  width: 100%;
+  width: 75%;
   border: 1px solid #3b5998;
   // border: 1px solid black;
   text-align: center;
+  margin: auto;
 }
 
 #table-gen-id tr {
@@ -141,25 +162,46 @@ body {
   background-color: #3b5998;
 }
 
-// Generated View Table
+// Generated Show Table
+
+#table-gen-show tr {
+  height: 40px;
+}
+
+#table-gen-show > tbody > tr:nth-of-type(odd) {
+  background-color: #f7f7f7;
+}
+
+#table-gen-show > tbody > tr:nth-of-type(even) {
+  background-color: #dfe3ee;
+}
 
 #table-gen-show {
-  width: 80%;
-  border: 1px solid black;
+  width: 75%;
+  margin-top: 25px;
   text-align: center;
+  border: 1px solid #3b5998;
 }
 
 #table-gen-show td {
-  width: 80%;
-  border: 1px solid black;
+  width: 100%;
+  // border: 1px solid black;
 }
 
-,
+#table-gen-show > tbody > .tr-gen-name-show:nth-of-type(odd) {
+  color: white;
+  background-color: #3b5998;
+}
+
+
+//////////////////////////////////////
 .comments-input {
   width: 80%;
   height: 150px;
 }
 
+
+/////////////////////////////
 #new-form-error,
 #update-form-error {
   display: none;
@@ -247,6 +289,8 @@ input[type=submit] {
 
 // Old Button Styling - prebootstrap
 
+
+
 .nav-container {
   text-align: center;
   margin: 10px;
@@ -267,22 +311,49 @@ input[type=submit] {
 }
 
 .nav-button-container button:hover {
-  background-color: #f7f7f7;
-  color: #3b5998;
+  background-color: #adbad5;
+  color: #2f4779;
   // border: none;
   // border-radius: 4px;
   cursor: pointer;
 }
 
-.dashboard-btn {
+///////
+// Bootstrap modification
+///////
+#table-gen-id button {
+  border: 1px solid #8b9dc3;
+  background: white;
+  color: #3b5998;
+}
+
+#table-gen-id button:hover {
+  border: 1px solid #293e6a;
+  background: #f7f7f7;
+  color: #293e6a;
+}
+
+/////////
+//Modifying for bootstrap
+//////////
+#create-record-btn, #show-records-btn {
+  font-size: 16px;
   width: 165px;
-  background-color: blue;
-  color: white;
+  background: transparent;
+  border-color: #3b5998;
+//   background-color: blue;
+  color: #3b5998;
   padding: 10px 14px;
   margin: 8px;
-  border: none;
+//   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+#create-record-btn:hover, #show-records-btn:hover {
+  background-color: #adbad5;
+  border-color: #3b5998;
+  color: #3b5998;
 }
 
 input[type=submit]:hover {
@@ -311,6 +382,7 @@ input[type=submit]:hover {
   .nav-button-container {
     text-align: center;
     width: 100%;
+    margin-bottom: 15px;
   }
 
   .logo-text-container {
@@ -330,6 +402,14 @@ input[type=submit]:hover {
   .homepage-desc-container {
     clear: both;
   }
+
+  #table-gen-show {
+    width: 85%;
+  }
+
+  #table-gen-id {
+    width: 85%;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -344,6 +424,14 @@ input[type=submit]:hover {
 
   input[type=password],
   select {
+    width: 100%;
+  }
+
+  #table-gen-show {
+    width: 100%;
+  }
+
+  #table-gen-id {
     width: 100%;
   }
 }

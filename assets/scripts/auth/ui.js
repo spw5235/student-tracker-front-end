@@ -101,6 +101,7 @@ const signOutSuccess = function() {
   $("#sign-out-success").show();
   $("#change-password").hide();
   $("#table-gen-id").remove();
+  $(".h1-title").remove();
   $("#table-gen-show").remove();
   $(".homepage-desc-container").show();
 };
@@ -109,6 +110,7 @@ const signOutSuccess = function() {
 
 const signOutFailure = function() {
   console.log("signout failure");
+  $(".h1-title").remove();
   $(".alert").hide();
   $("#sign-out-warning").show();
 };
@@ -137,6 +139,7 @@ const updateRow = function() {
     $(".grade-input").val(store.btnUpdateGradeText);
     $(".comments-input").text(store.btnUpdateCommentText);
     $("#table-gen-id").remove();
+    $(".h1-title").remove();
    });
 };
 
@@ -162,6 +165,7 @@ const updateButtonInShow = function() {
     $(".grade-input").val(store.showUpdateGradeText);
     $(".comments-input").text(store.showUpdateCommentText);
     $("#table-gen-show").remove();
+    $(".h1-title").remove();
     // $("#table-gen-id").remove();
   });
 };
@@ -228,6 +232,7 @@ const updateTrackerFailure = (data) => {
 };
 
 const showRow = function() {
+  let insertH1 = $('<h1 class="h1-title h1-show-table-generated" id="h1-show-table">Student Note:</h1>');
   $( ".view-button" ).on( "click", function() {
    // let btnClassName = parseInt( $( this ).attr("id") );
     store.buttonShowVal = parseInt($( this ).attr("id"));
@@ -242,11 +247,13 @@ const showRow = function() {
 
         let showTableHtml = logic.createShowTable(store.showFn, store.showLn, store.showGrade, store.showComments);
         console.log(showTableHtml);
+        $(".show-table-generated-container").append(insertH1);
         $(".show-table-generated-container").append(showTableHtml);
     })
     .done(showTrackerSuccess)
     .fail(showTrackerFailure);
     $("#table-gen-id").remove();
+    $(".h1-title").show();
   });
 
 };
