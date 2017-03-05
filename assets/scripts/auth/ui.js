@@ -143,6 +143,7 @@ const updateRow = function() {
     $("#table-gen-id").remove();
     $(".h1-title").remove();
     $("#h1-dashboard-table").remove();
+    $("#create-record-btn").show();
    });
 };
 
@@ -170,6 +171,7 @@ const updateButtonInShow = function() {
     $("#table-gen-show").remove();
     $(".h1-title").remove();
     // $("#table-gen-id").remove();
+    $("#create-record-btn").show();
   });
 };
 
@@ -194,7 +196,7 @@ const createTrackerSuccess = (data) => {
   let form = document.getElementById("new-tracker-form");
   form.reset();
   $("#new-tracker-form").hide();
-  $("#create-record-btn").show();
+  // $("#create-record-btn").show();
   $(".warning").hide();
   $("#new-form-success").show();
   // $("#create-setting-stud-id").attr("value", store.currentTrackerId);
