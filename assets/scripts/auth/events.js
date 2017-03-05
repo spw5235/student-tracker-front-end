@@ -181,12 +181,12 @@ const onCreateNewRecordBtn = function() {
 const onShowRecordsBtn = function() {
   onDashButtons();
   $(".h1-show-table-generated").show();
-  $("#create-record-btn").show();
   $("#show-records-btn").hide();
   $("#new-tracker-form").hide();
   $(".table-generated-container").show();
   $("#update-tracker-form").hide();
   $("#table-gen-id").remove();
+  $("#create-record-btn").show();
   // $("#h1-dashboard-table").remove();
 };
 
