@@ -104,6 +104,8 @@ const signOutSuccess = function() {
   $(".h1-title").remove();
   $("#table-gen-show").remove();
   $(".homepage-desc-container").show();
+  $("#sign-in .field-input").val("");
+  $("#sign-up .field-input").val("");
 };
 
 // To Hide Signout Warning when signing in or signing up
@@ -237,6 +239,7 @@ const updateTrackerFailure = (data) => {
 const showRow = function() {
   let insertH1 = $('<h1 class="h1-title h1-show-table-generated" id="h1-show-table">Student Note:</h1>');
   $( ".view-button" ).on( "click", function() {
+    $("#create-record-btn").hide();
    // let btnClassName = parseInt( $( this ).attr("id") );
     store.buttonShowVal = parseInt($( this ).attr("id"));
     console.log(store.buttonShowVal);
@@ -255,9 +258,10 @@ const showRow = function() {
     })
     .done(showTrackerSuccess)
     .fail(showTrackerFailure);
+    $("#create-record-btn").show();
+    $("#h1-dashboard-table").remove();
     $("#table-gen-id").remove();
     $(".h1-title").show();
-    $("#h1-dashboard-table").remove();
   });
 
 };
