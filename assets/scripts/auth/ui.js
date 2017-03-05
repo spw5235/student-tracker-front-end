@@ -179,6 +179,7 @@ const showTrackerSuccess = (data) => {
   console.log('show tracker success');
   console.log(data);
   $("#show-records-btn").show();
+  $("#create-record-btn").show();
   $("#update-form-error").hide();
   updateButtonInShow();
   $(".warning").hide();
@@ -270,6 +271,7 @@ const showRow = function() {
 
 const deleteRow = function() {
    $( ".delete-button" ).on( "click", function() {
+     $("#create-record-btn").hide();
     // let btnClassName = parseInt( $( this ).attr("id") );
     store.buttonDeleteVal = $( this ).attr("id");
     api.deleteTracker(store.buttonDeleteVal)
@@ -285,6 +287,7 @@ const getTrackerSuccess = (data) => {
   console.log('get tracker success');
   console.log(data);
   $("#show-records-btn").hide();
+  $("#create-record-btn").hide();
   deleteRow();
   updateRow();
   showRow();
@@ -296,6 +299,7 @@ const getTrackerSuccess = (data) => {
   // $("#show-records-btn").hide();
   // $("#new-tracker-form").hide();
   // $(".table-generated-container").hide();
+  // $("#create-record-btn").show();
 };
 
 module.exports = {
