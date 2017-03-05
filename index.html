@@ -31,21 +31,23 @@
   <div class="warning-container">
     <p id="sign-out-success" class="notification alert">You have successfully signed-out.</p>
     <p id="sign-up-warning" class="password-warning warning alert">Error. Please Try Again.</p>
-    <p id="sign-in-success" class="password-warning notification alert">You have successfully signed-in.</p>
+    <p id="sign-in-success" class="password-warning notification alert">You have successfully signed-in. Please make a selection below.</p>
     <p id="sign-out-warning" class="password-warning warning alert">Error signing-out. Please close your browser and try again.</p>
     <p id="change-password-error" class="password-warning warning alert">Error changing password. Please try again.</p>
     <p id="change-password-success" class="password-warning notification alert">You have successfully changed your password.</p>
     <p id="sign-up-success" class="password-warning notification alert">You have successfully signed-up. Please sign-in to continue</p>
-    <p id="sign-in-warning" class="password-warning notification alert">Error. Please try again.</p>
+    <p id="sign-in-warning" class="password-warning warning alert">Error signing-in. Please try again.</p>
     <!-- <p class="warning" id="post-change-warning">Alert: Your password has been changed. For security purposes, you have been signed-out. Please sign-in to continue playing</p> -->
     <p id="new-form-error" class="password-warning warning alert">Error creating note. Please try again.</p>
+    <p id="new-form-success" class="password-warning notification alert">Your note has been successfully created.</p>
+    <p id="delete-form-success" class="password-warning notification alert">Your note has been successfully deleted.</p>
     <p id="update-form-success" class="password-warning notification alert">You have successfully updated the note.</p>
     <p class="password-warning warning alert" id="update-form-error">There has been an error updating the note. Please try again.</p>
   </div>
   <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
   <form class="form credential-form" id="sign-up" name="sign-up">
     <fieldset>
-      <legend>Sign up!</legend>
+      <h1 class="form-h1">Sign-Up</h1>
       <p class="field-description">Email</p>
       <input name="credentials[email]" placeholder="email" type="text" value="">
       <p class="field-description">Password</p>
@@ -59,7 +61,7 @@
 
   <form class="form credential-form" id="sign-in" name="sign-in">
     <fieldset>
-      <legend>Sign in!</legend>
+      <h1 class="form-h1">Sign-In</h1>
       <p class="field-description">Email</p>
       <input class="field-input" name="credentials[email]" placeholder="email" type="text" value="">
       <p class="field-description">Password</p>
@@ -78,7 +80,7 @@
 
   <form class="form credential-form" id="change-password" name="change-password">
     <fieldset>
-      <legend>Change Password</legend>
+      <h1 class="form-h1">Change Password</h1>
       <p class="field-description">Old Password</p>
       <input class="field-input" name="passwords[old]" placeholder="Old Password" type="password">
       <p class="field-description">New Password</p>

@@ -194,7 +194,7 @@ const createTrackerSuccess = (data) => {
   $("#new-tracker-form").hide();
   $("#create-record-btn").show();
   $(".warning").hide();
-
+  $("#new-form-success").show();
   // $("#create-setting-stud-id").attr("value", store.currentTrackerId);
 };
 
@@ -270,6 +270,7 @@ const deleteRow = function() {
       .done(deleteTrackerSuccess)
       .fail(deleteTrackerFailure);
     $(this).parent().parent().hide();
+    $("#delete-form-success").slideDown().delay(2000).slideUp();
    });
 };
 

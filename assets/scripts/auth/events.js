@@ -152,6 +152,7 @@ const onClickChangePasswordBtn = function() {
   $("#new-form-error").hide();
   $(".h1-title").remove();
   $("#update-form-success").hide();
+  $("#new-form-success").hide();
   // $("#change-password-btn").hide();
 };
 
