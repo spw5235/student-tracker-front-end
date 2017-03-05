@@ -186,7 +186,7 @@ const onShowRecordsBtn = function() {
   $(".table-generated-container").show();
   $("#update-tracker-form").hide();
   $("#table-gen-id").remove();
-  $("#create-record-btn").show();
+  // $("#create-record-btn").show();
   // $("#h1-dashboard-table").remove();
 };
 
