@@ -68,7 +68,9 @@ const onGetTrackers = function(event) {
         $("tg-td-details").addClass(textclass);
         tableBody.append(newGenRow);
       }
+      let h1Title = $('<h1 class="h1-title" id="h1-dashboard-table">Counselor Dashboard:</h1>');
       tableId.append(tableBody);
+      $(".table-generated").append(h1Title);
       $(".table-generated").append(tableId);
     })
     .done(ui.getTrackerSuccess)
@@ -149,6 +151,7 @@ const onClickChangePasswordBtn = function() {
   $("#update-tracker-form").hide();
   $("#new-form-error").hide();
   $(".h1-title").remove();
+  $("#update-form-success").hide();
   // $("#change-password-btn").hide();
 };
 
@@ -171,6 +174,7 @@ const onCreateNewRecordBtn = function() {
   $(".comments-input").text('');
   $("#table-gen-id").remove();
   $(".h1-title").remove();
+  $("#h1-dashboard-table").remove();
 };
 
 const onShowRecordsBtn = function() {
@@ -182,6 +186,7 @@ const onShowRecordsBtn = function() {
   $(".table-generated-container").show();
   $("#update-tracker-form").hide();
   $("#table-gen-id").remove();
+  // $("#h1-dashboard-table").remove();
 };
 
  $('#show-records-btn').on('click', onShowRecordsBtn);

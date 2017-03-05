@@ -140,6 +140,7 @@ const updateRow = function() {
     $(".comments-input").text(store.btnUpdateCommentText);
     $("#table-gen-id").remove();
     $(".h1-title").remove();
+    $("#h1-dashboard-table").remove();
    });
 };
 
@@ -222,10 +223,12 @@ const updateTrackerSuccess = (data) => {
   $("#show-records-btn").show();
   let form = document.getElementById("update-tracker-form");
   form.reset();
-  $(".warning").hide();
+  $(".alert").hide();
+  $('#update-form-success').show();
 };
 
 const updateTrackerFailure = (data) => {
+  $(".alert").hide();
   $("#update-form-error").show();
   console.log('update tracker failure');
   console.log(data);
@@ -254,6 +257,7 @@ const showRow = function() {
     .fail(showTrackerFailure);
     $("#table-gen-id").remove();
     $(".h1-title").show();
+    $("#h1-dashboard-table").remove();
   });
 
 };

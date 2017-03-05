@@ -39,7 +39,8 @@
     <p id="sign-in-warning" class="password-warning notification alert">Error. Please try again.</p>
     <!-- <p class="warning" id="post-change-warning">Alert: Your password has been changed. For security purposes, you have been signed-out. Please sign-in to continue playing</p> -->
     <p id="new-form-error" class="password-warning warning alert">Error creating note. Please try again.</p>
-    <p class="password-warning warning alert" id="update-form-error">There has been an error updating the record. Please try again.</p>
+    <p id="update-form-success" class="password-warning notification alert">You have successfully updated the note.</p>
+    <p class="password-warning warning alert" id="update-form-error">There has been an error updating the note. Please try again.</p>
   </div>
   <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
   <form class="form credential-form" id="sign-up" name="sign-up">
@@ -82,6 +83,7 @@
       <input class="field-input" name="passwords[old]" placeholder="Old Password" type="password">
       <p class="field-description">New Password</p>
       <input class="field-input" name="passwords[new]" placeholder="New Password" type="password">
+      <br>
       <input class="submit-btn" name="submit" type="submit" value="Submit">
     </fieldset>
   </form>

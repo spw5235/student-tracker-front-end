@@ -75,7 +75,7 @@ const createShowTable = function(TdFntxt, tdLntxt, tdGradetxt, tdCommentTxt) {
   let tdComments= $('<td class="td-gen-comments-show"></td>');
 
   // Update Button part of show table
-  let showUpdateBtn = $('<button class="show-update-btn" id="update-record-btn">Update Record</button>');
+  let showUpdateBtn = $('<button class="show-update-btn btn btn-secondary" id="update-record-btn">Update Record</button>');
   let tdUpdateBtn = $('<td class="td-gen-update-show"></td>');
   let updateBtnAppend = $(tdUpdateBtn).append(showUpdateBtn);
 

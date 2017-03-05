@@ -333,6 +333,18 @@ input[type=submit] {
   color: #293e6a;
 }
 
+#table-gen-show button {
+  border: 1px solid #8b9dc3;
+  background: white;
+  color: #3b5998;
+}
+
+#table-gen-show button:hover {
+  border: 1px solid #293e6a;
+  background: #f7f7f7;
+  color: #293e6a;
+}
+
 /////////
 //Modifying for bootstrap
 //////////
