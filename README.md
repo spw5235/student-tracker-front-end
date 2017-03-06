@@ -4,8 +4,9 @@
 
 School Counselors are responsible for keeping detailed notes on students.  Therefore, Counselor Notepad (formerly BOSS), was created so that counselors can keep detailed and organized notes on a student.  This application not only allows the user to create and view notes, but updates can be made when needed and the record can easily be deleted.
 
-Link to the live application: https://spw5235.github.io/boss-project-front-end/
-Link to the API Source:
+Link to the live application: [https://spw5235.github.io/boss-project-front-end/](https://spw5235.github.io/boss-project-front-end/).
+
+Link to the API Source: [https://github.com/spw5235/boss-project-back-end](https://github.com/spw5235/boss-project-back-end).
 
 ## Technologies Used
 
@@ -40,6 +41,6 @@ Based on the user-stories, mulitiple wireframes were created for this applicatio
 -   [View Record](https://drive.google.com/open?id=0B_Hv9u6cm8IVZ1hUQm9QZ1ptaHc)
 -   [Update Record](https://drive.google.com/open?id=0B_Hv9u6cm8IVWWVVZG1mMkhFX0E)
 
-### Application Limitations & Unresolve Problems
+### Application Limitations & Unresolved Problems
 
-There are some limitations with this web application.  For example, records are not sorted by the last name of a student. Also, the amount of identifying information is limited.  By creating additional fields, such as student date-of-birth, would help counselors to identify students more easily. Therefore, a number of improvements could be made.
+There are some limitations with this web application.  For example, records are not sorted by the last name of a student. Also, the amount of identifying information is limited.  By creating additional fields, such as student date-of-birth, school counselors would have an easier time identifying students.  Therefore, a number of improvements could be made.
