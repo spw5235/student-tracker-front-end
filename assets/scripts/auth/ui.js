@@ -36,19 +36,14 @@ const failure = (error) => {
 
 const signInSuccess = function() {
   console.log('sign-in success');
-  $(".dashboard-description").show();
   $(".prelogin").hide();
   $(".postlogin").show();
-  // $(".password-warning").hide();
   $("#sign-in").hide();
-  $(".dashboard-container").show();
-  // $("#sign-up-success").show();
-  $('#create-record-btn').show();
   $('#show-records-btn').show();
   $(".alert").hide();
-  // $("#sign-up-success").hide();
   $("#sign-in-success").show();
   $(".homepage-desc-container").hide();
+  $("#create-record-btn").show();
 };
 
 const signInFailure = function() {
@@ -94,11 +89,11 @@ const signOutSuccess = function() {
   $(".prelogin").show();
   $(".postlogin").hide();
   $(".tracker-form").hide();
-  $(".dashboard-description").hide();
   $(".credential-form").hide();
-  // $(".table-generated-container").hide();
+  $("#create-record-btn").hide();
+  $("#show-records-btn").hide();
   $("#new-tracker-form .field-input").val("");
-  $("#sign-out-success").show();
+  $("#sign-out-success").show().delay(1500).slideUp();
   $("#change-password").hide();
   $("#table-gen-id").remove();
   $(".h1-title").remove();
@@ -127,6 +122,7 @@ const getTrackerFailure = (data) => {
 
 const updateRow = function() {
    $( ".update-button" ).on( "click", function() {
+     $("#create-record-btn").hide();
     // let btnClassName = parseInt( $( this ).attr("id") );
     store.buttonUpdateVal = parseInt($( this ).attr("id"));
     store.btnUpdateFnText = $( this ).parent().parent().children(".tg-td-fn").text();
@@ -179,10 +175,11 @@ const showTrackerSuccess = (data) => {
   console.log('show tracker success');
   console.log(data);
   $("#show-records-btn").show();
-  // $("#create-record-btn").show();
   $("#update-form-error").hide();
   updateButtonInShow();
   $(".warning").hide();
+  $("#create-record-btn").show();
+  // $("#create-record-btn").show();
   // $("#table-gen-show").remove();
 };
 
@@ -197,9 +194,9 @@ const createTrackerSuccess = (data) => {
   let form = document.getElementById("new-tracker-form");
   form.reset();
   $("#new-tracker-form").hide();
-  // $("#create-record-btn").show();
   $(".warning").hide();
   $("#new-form-success").show();
+  $("#create-record-btn").show();
   // $("#create-setting-stud-id").attr("value", store.currentTrackerId);
 };
 
@@ -230,6 +227,7 @@ const updateTrackerSuccess = (data) => {
   form.reset();
   $(".alert").hide();
   $('#update-form-success').show();
+  $("#create-record-btn").show();
 };
 
 const updateTrackerFailure = (data) => {
@@ -271,6 +269,7 @@ const showRow = function() {
 
 const deleteRow = function() {
    $( ".delete-button" ).on( "click", function() {
+     $("#create-record-btn").hide();
     //  $("#create-record-btn").hide();
     //  $("#show-records-btn").hide();
     // let btnClassName = parseInt( $( this ).attr("id") );
@@ -279,7 +278,7 @@ const deleteRow = function() {
       .done(deleteTrackerSuccess)
       .fail(deleteTrackerFailure);
     $(this).parent().parent().hide();
-    $("#delete-form-success").slideDown().delay(2000).slideUp();
+    $("#delete-form-success").show().delay(1500).slideUp();
    });
 };
 
@@ -287,8 +286,9 @@ const deleteRow = function() {
 const getTrackerSuccess = (data) => {
   console.log('get tracker success');
   console.log(data);
-  $("#show-records-btn").hide();
-  $("#create-record-btn").hide();
+  $("#create-record-btn").show();
+  // $("#show-records-btn").hide();
+  // $("#create-record-btn").hide();
   deleteRow();
   updateRow();
   showRow();
@@ -300,8 +300,8 @@ const getTrackerSuccess = (data) => {
   // $("#show-records-btn").hide();
   // $("#new-tracker-form").hide();
   // $(".table-generated-container").hide();
-  $("#create-record-btn").show();
-  $("#show-records-btn").show();
+  // $("#create-record-btn").show();
+  // $("#show-records-btn").show();
 
 };
 

@@ -11,6 +11,7 @@ body {
 textarea {
   border-radius: 4px;
   border: 1px solid #adbad5;
+  padding: 12px 20px
 }
 
 .h1-title {
@@ -139,8 +140,9 @@ textarea {
 #sign-up-success,
 #sign-up-warning,
 #update-tracker-form,
-.mobile-clearfix,
-.dashboard-container {
+#show-records-btn,
+#create-record-btn,
+.mobile-clearfix {
   display: none;
 }
 
@@ -152,7 +154,26 @@ textarea {
   display: none;
 }
 
+#update-tracker-form {
+  margin-top: 20px;
+}
 
+#update-tracker-form fieldset {
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid #3b5998;
+}
+
+#new-tracker-form {
+  margin-top: 20px;
+}
+
+#new-tracker-form fieldset {
+  width: 80%;
+  border: 1px solid red;
+  margin: 0 auto;
+  border: 1px solid #3b5998;
+}
 
 // Generated Dashboard Table
 #table-gen-id {
@@ -168,11 +189,11 @@ textarea {
 }
 
 #table-gen-id > tbody > tr:nth-of-type(odd) {
-  background-color: #f7f7f7;
+  background-color: #dfe3ee;
 }
 
 #table-gen-id > tbody > tr:nth-of-type(even) {
-  background-color: #dfe3ee;
+  background-color: #f7f7f7;
 }
 
 #table-gen-id td {

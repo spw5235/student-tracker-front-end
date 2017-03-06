@@ -46,8 +46,42 @@ const onChangePassword = function(event) {
 
 // STUDENT EVENTS
 
+const onDashButtons = function() {
+  $(".alert").hide();
+  $("#update-form-error").hide();
+  $("#table-gen-show").remove();
+  $("#update-form-error").hide();
+  $("#change-password").hide();
+  $(".h1-title").remove();
+};
+
+const onCreateNewRecordBtn = function() {
+  onDashButtons();
+  $("#new-tracker-form").show();
+  $("#show-records-btn").show();
+  $("#create-record-btn").hide();
+  $("#update-tracker-form").hide();
+  $(".comments-input").text('');
+  $("#table-gen-id").remove();
+  $(".h1-title").remove();
+  $("#h1-dashboard-table").remove();
+};
+
+const onShowRecordsBtn = function() {
+  onDashButtons();
+  $(".h1-show-table-generated").show();
+  $("#show-records-btn").hide();
+  $("#new-tracker-form").hide();
+  $(".table-generated-container").show();
+  $("#update-tracker-form").hide();
+  $("#table-gen-id").remove();
+  // $("#create-record-btn").show();
+  // $("#h1-dashboard-table").remove();
+};
+
 const onGetTrackers = function(event) {
   event.preventDefault();
+  $("#create-record-btn").hide();
   api.getTrackers()
     .then((response) => {
       let tableId = $('<table id="table-gen-id" class="table-striped"></table>');
@@ -75,37 +109,13 @@ const onGetTrackers = function(event) {
     })
     .done(ui.getTrackerSuccess)
     .fail(ui.getTrackerFailure);
+    onShowRecordsBtn();
 };
-
-// const onShowTracker = function() {
-//   event.preventDefault();
-//   api.showTracker()
-//     .then((response) => {
-//       console.log(response);
-//       console.log(store.buttonShowVal);
-
-
-
-    //   $( ".update-button" ).on( "click", function() {
-    //    // let btnClassName = parseInt( $( this ).attr("id") );
-    //    store.buttonShowVal = parseInt($( this ).attr("id"));
-    //    store.btnShowFnText = $( this ).parent().parent().children(".tg-td-fn").text();
-    //    store.btnShowText = $( this ).parent().parent().children(".tg-td-ln").text();
-    //    store.btnShowGradeText = $( this ).parent().parent().children(".tg-td-grade").text();
-    //    store.btnShowCommentText = $( this ).parent().parent().children(".tg-td-comment").text();
-    // })
-//     .done(ui.showTrackerSuccess)
-//     .fail(ui.showTrackerFailure);
-// };
 
 const onCreateTracker = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.createTracker(data)
-    // .then((response) => {
-    //   store.currentTrackerId = response.tracker.id;
-    //   return store.currentTrackerId;
-    // })
     .done(ui.createTrackerSuccess)
     .fail(ui.createTrackerFailure);
 };
@@ -155,42 +165,6 @@ const onClickChangePasswordBtn = function() {
   $("#new-form-success").hide();
   // $("#change-password-btn").hide();
 };
-
-const onDashButtons = function() {
-  $(".alert").hide();
-  $("#update-form-error").hide();
-  $("#table-gen-show").remove();
-  $("#update-form-error").hide();
-  $("#change-password").hide();
-  $(".h1-title").remove();
-};
-
-const onCreateNewRecordBtn = function() {
-  onDashButtons();
-  $("#new-tracker-form").show();
-  $("#show-records-btn").show();
-  $("#create-record-btn").hide();
-  // $(".table-generated-container").hide();
-  $("#update-tracker-form").hide();
-  $(".comments-input").text('');
-  $("#table-gen-id").remove();
-  $(".h1-title").remove();
-  $("#h1-dashboard-table").remove();
-};
-
-const onShowRecordsBtn = function() {
-  onDashButtons();
-  $(".h1-show-table-generated").show();
-  $("#show-records-btn").hide();
-  $("#new-tracker-form").hide();
-  $(".table-generated-container").show();
-  $("#update-tracker-form").hide();
-  $("#table-gen-id").remove();
-  // $("#create-record-btn").show();
-  // $("#h1-dashboard-table").remove();
-};
-
- $('#show-records-btn').on('click', onShowRecordsBtn);
  // $('#sign-in-btn').on('click', onClickSignInButton());
 
 //  $( "#sign-in-btn" ).on( "click", function() {
