@@ -6,16 +6,13 @@ const logic = require('./logic');
 
 const success = (data) => {
   console.log('success completed');
-  console.log(data);
 };
 
 const failure = (error) => {
   console.error(error);
-  console.log('error');
 };
 
 const signInSuccess = function() {
-  console.log('sign-in success');
   $(".prelogin").hide();
   $(".postlogin").show();
   $("#sign-in").hide();
@@ -46,20 +43,17 @@ const signUpFailure = function() {
 };
 
 const changePasswordSuccess = function() {
-  console.log("change password success");
   $(".alert").hide();
   $("#change-password").hide();
   $("#change-password-success").show();
 };
 
 const changePasswordFailure = function() {
-  console.log("change password failure");
   $(".alert").hide();
   $("#change-password-error").show();
 };
 
 const signOutSuccess = function() {
-  console.log("signout success");
   $(".alert").hide();
   $(".prelogin").show();
   $(".postlogin").hide();
@@ -81,7 +75,6 @@ const signOutSuccess = function() {
 // To Hide Signout Warning when signing in or signing up
 
 const signOutFailure = function() {
-  console.log("signout failure");
   $(".h1-title").remove();
   $(".alert").hide();
   $("#sign-out-warning").show();
@@ -104,7 +97,6 @@ const updateRow = function() {
     store.btnUpdateLnText = $( this ).parent().parent().children(".tg-td-ln").text();
     store.btnUpdateGradeText = $( this ).parent().parent().children(".tg-td-grade").text();
     store.btnUpdateCommentText = $( this ).parent().parent().children(".tg-td-comment").text();
-    console.log(store.btnUpdateCommentText);
     $("#show-records-btn").show();
     $("#update-tracker-form").show();
     $(".fn-input").val(store.btnUpdateFnText);
@@ -212,7 +204,6 @@ const showRow = function() {
   $( ".view-button" ).on( "click", function() {
     $("#create-record-btn").hide();
     store.buttonShowVal = parseInt($( this ).attr("id"));
-    console.log(store.buttonShowVal);
     api.showTracker()
       .then((response) => {
         store.showId = response.tracker.id;

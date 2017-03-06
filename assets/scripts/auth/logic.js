@@ -80,8 +80,6 @@ const createShowTable = function(TdFntxt, tdLntxt, tdGradetxt, tdCommentTxt) {
 
   tdComments.text(tdCommentTxt);
 
-  console.log(tdComments);
-
   let tableGenAppend;
 
   tableGenAppend = $(tableTrGeneratedName).append(tdName);
