@@ -23,10 +23,6 @@ const createRowHTML = function(tdIDtxt, TdFntxt, tdLntxt, tdGradetxt, tdCommentT
   let tdUpdateBtn = $('<button type="button" class="update-button btn btn-secondary">Update</button>');
   let tdDeleteBtn = $('<button type="button" class="delete-button btn btn-secondary">Delete</button>');
 
-  // let viewBtnClassName = "table-gen-btn-view";
-  // let updateBtnClassName = "table-gen-btn-update";
-  // let deleteBtnClassName = "table-gen-btn-delete";
-
   let buttonIdClassTextView = tdIDtxt + "viewid";
   let buttonIdClassTextDelete = tdIDtxt + "deleteid";
   let buttonIdClassTextUpdate = tdIDtxt + "updateid";
@@ -34,9 +30,6 @@ const createRowHTML = function(tdIDtxt, TdFntxt, tdLntxt, tdGradetxt, tdCommentT
   tdViewBtn.attr("id", buttonIdClassTextView);
   tdUpdateBtn.attr("id", buttonIdClassTextDelete);
   tdDeleteBtn.attr("id", buttonIdClassTextUpdate);
-  // tdViewBtn.addClass(viewBtnClassName);
-  // tdUpdateBtn.addClass(updateBtnClassName);
-  // tdDeleteBtn.addClass(deleteBtnClassName);
 
   let tdDetailsView = $('<td class="tg-td-details-view"></td>');
   tdDetailsView.append(tdViewBtn);

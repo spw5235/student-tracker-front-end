@@ -4,26 +4,6 @@ const api = require('./api');
 const store = require('../store');
 const logic = require('./logic');
 
-// let screenWidth = $(window).width();
-// let mobileClearfix = $('<div class="clearfix mobile-clearfix"></div>');
-//
-// if (screenWidth < 700) {
-//   $(".insert-mobile-clearfix").append(mobileClearfix);
-// };
-
-// const cleafixMobile = function() {
-//   if ( screenWidth > 700 ) {
-//     alert('below');
-//   }
-// };
-
-// cleafixMobile();
-// const eventsjs = require('./events');
-
-// Success/Fail Handler
-
-// $("#show-records-btn").html();
-
 const success = (data) => {
   console.log('success completed');
   console.log(data);
@@ -47,19 +27,14 @@ const signInSuccess = function() {
 };
 
 const signInFailure = function() {
-  // $("#sign-in-warning").hide();
-  // $(".warning").hide();
-  // $("#sign-in-success").hide();
   $(".alert").hide();
   $("#sign-in-warning").show();
 };
 
 const signUpSuccess = function() {
   $(".alert").hide();
-  // $("#sign-up-warning").hide();
   $("#sign-up").hide();
   $("#sign-in").show();
-  // $(".warning").hide();
   $("#sign-up-success").show();
   $("#sign-up-btn").hide();
   $("#sign-in-btn").hide();
@@ -113,7 +88,8 @@ const signOutFailure = function() {
 };
 
 ///////////////////////
-// Tracker UI
+///// Tracker UI///////
+//////////////////////
 
 const getTrackerFailure = (data) => {
   console.log('get tracker failure');
@@ -123,7 +99,6 @@ const getTrackerFailure = (data) => {
 const updateRow = function() {
    $( ".update-button" ).on( "click", function() {
      $("#create-record-btn").hide();
-    // let btnClassName = parseInt( $( this ).attr("id") );
     store.buttonUpdateVal = parseInt($( this ).attr("id"));
     store.btnUpdateFnText = $( this ).parent().parent().children(".tg-td-fn").text();
     store.btnUpdateLnText = $( this ).parent().parent().children(".tg-td-ln").text();
@@ -159,14 +134,12 @@ const updateButtonInShow = function() {
     store.showUpdateGradeText = gradeUpdate;
     store.showUpdateCommentText = $(".td-gen-comments-show").text();
     $("#update-tracker-form").show();
-    // $(".table-generated").hide();
     $(".fn-input").val(store.showUpdateFirstName);
     $(".ln-input").val(store.showUpdateLastName);
     $(".grade-input").val(store.showUpdateGradeText);
     $(".comments-input").text(store.showUpdateCommentText);
     $("#table-gen-show").remove();
     $(".h1-title").remove();
-    // $("#table-gen-id").remove();
     $("#create-record-btn").show();
   });
 };
@@ -179,8 +152,6 @@ const showTrackerSuccess = (data) => {
   updateButtonInShow();
   $(".warning").hide();
   $("#create-record-btn").show();
-  // $("#create-record-btn").show();
-  // $("#table-gen-show").remove();
 };
 
 const showTrackerFailure = (data) => {
@@ -197,7 +168,6 @@ const createTrackerSuccess = (data) => {
   $(".warning").hide();
   $("#new-form-success").show();
   $("#create-record-btn").show();
-  // $("#create-setting-stud-id").attr("value", store.currentTrackerId);
 };
 
 const createTrackerFailure = (data) => {
@@ -241,7 +211,6 @@ const showRow = function() {
   let insertH1 = $('<h1 class="h1-title h1-show-table-generated" id="h1-show-table">Student Note:</h1>');
   $( ".view-button" ).on( "click", function() {
     $("#create-record-btn").hide();
-   // let btnClassName = parseInt( $( this ).attr("id") );
     store.buttonShowVal = parseInt($( this ).attr("id"));
     console.log(store.buttonShowVal);
     api.showTracker()
@@ -253,13 +222,11 @@ const showRow = function() {
         store.showComments = response.tracker.comments;
 
         let showTableHtml = logic.createShowTable(store.showFn, store.showLn, store.showGrade, store.showComments);
-        console.log(showTableHtml);
         $(".show-table-generated-container").append(insertH1);
         $(".show-table-generated-container").append(showTableHtml);
     })
     .done(showTrackerSuccess)
     .fail(showTrackerFailure);
-    // $("#create-record-btn").show();
     $("#h1-dashboard-table").remove();
     $("#table-gen-id").remove();
     $(".h1-title").show();
@@ -270,9 +237,6 @@ const showRow = function() {
 const deleteRow = function() {
    $( ".delete-button" ).on( "click", function() {
      $("#create-record-btn").hide();
-    //  $("#create-record-btn").hide();
-    //  $("#show-records-btn").hide();
-    // let btnClassName = parseInt( $( this ).attr("id") );
     store.buttonDeleteVal = $( this ).attr("id");
     api.deleteTracker(store.buttonDeleteVal)
       .done(deleteTrackerSuccess)
@@ -284,25 +248,10 @@ const deleteRow = function() {
 
 
 const getTrackerSuccess = (data) => {
-  console.log('get tracker success');
-  console.log(data);
   $("#create-record-btn").show();
-  // $("#show-records-btn").hide();
-  // $("#create-record-btn").hide();
   deleteRow();
   updateRow();
   showRow();
-  // $("#create-record-btn").show();
-  // $("#show-records-btn").hide();
-  // $("#new-tracker-form").hide();
-  // $("#create-record-btn").show();
-  // $("#new-tracker-form").show();
-  // $("#show-records-btn").hide();
-  // $("#new-tracker-form").hide();
-  // $(".table-generated-container").hide();
-  // $("#create-record-btn").show();
-  // $("#show-records-btn").show();
-
 };
 
 module.exports = {

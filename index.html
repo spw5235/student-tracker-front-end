@@ -37,14 +37,12 @@
     <p id="change-password-success" class="password-warning notification alert">You have successfully changed your password.</p>
     <p id="sign-up-success" class="password-warning notification alert">You have successfully signed-up. Please sign-in to continue</p>
     <p id="sign-in-warning" class="password-warning warning alert">Error signing-in. Please try again.</p>
-    <!-- <p class="warning" id="post-change-warning">Alert: Your password has been changed. For security purposes, you have been signed-out. Please sign-in to continue playing</p> -->
     <p id="new-form-error" class="password-warning warning alert">Error creating note. Please try again.</p>
     <p id="new-form-success" class="password-warning notification alert">Your note has been successfully created.</p>
     <p id="delete-form-success" class="password-warning notification alert">Your note has been successfully deleted.</p>
     <p id="update-form-success" class="password-warning notification alert">You have successfully updated the note.</p>
     <p class="password-warning warning alert" id="update-form-error">There has been an error updating the note. Please try again.</p>
   </div>
-  <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
   <form class="form credential-form" id="sign-up" name="sign-up">
     <fieldset>
       <h1 class="form-h1">Sign-Up</h1>
@@ -90,8 +88,6 @@
     </fieldset>
   </form>
 
-
-
   <!-- HOMEPAGE DESCRIPTION -->
   <div class="homepage-desc-container">
     <h1>Counselor Notepad</h1>
@@ -105,26 +101,9 @@
       <li>1:1 Student Sessions</li>
       <li>Faculty Meetings</li>
     </ul>
-
     <p class="hompage-desc-text">In Counselor Notepad, there is a counselor dashboard which provides an index for users to view a summary of all student notes. In addition, notes can be viewed, updated and deleted in the counselor dashboard. Sign up and try it today!</p>
   </div>
 
-  <!-- <form class="form tracker-form tracker" id="get-tracker-form" name="get-tracker-form">
-    <fieldset>
-      <legend>Get Tracker Form</legend>
-      <input name="submit" type="submit" value="View All Trackers">
-    </fieldset>
-  </form> -->
-
-  <!-- <form class="form tracker-form tracker" id="show-tracker-form" name="show-tracker-form">
-    <fieldset>
-      <legend>Show Trackers Form</legend>
-      <p class="field-description">Tracker ID</p>
-      <input name="tracker[id]" id="show-tracker-id" placeholder="Tracker ID" type="text">
-      <br>
-      <input name="submit" type="submit" value="View Tracker">
-    </fieldset>
-  </form> -->
 
   <form class="form tracker-form tracker" id="new-tracker-form" name="new-tracker-form">
     <fieldset>
@@ -136,22 +115,11 @@
       <p class="field-description">Grade</p>
       <input class="field-input" name="tracker[grade]" placeholder="Grade" type="text">
       <p class="field-description">Note</p>
-      <!-- <input name="tracker[comments]" placeholder="Comments" type="text"> -->
       <textarea class="field-input comments-input" name="tracker[comments]" placeholder="Note Text"></textarea>
       <br>
       <input class="submit-btn" name="submit" id="create-tracker-btn" type="submit" value="Submit">
     </fieldset>
   </form>
-
-  <!-- <form class="form tracker-form tracker" id="delete-tracker-form" name="delete-tracker-form">
-    <fieldset>
-      <legend>Delete Tracker Form</legend>
-      <p class="field-description">Tracker ID</p>
-      <input name="tracker[tracker_id]" id="delete-tracker-id" placeholder="Tracker ID" type="text">
-      <br>
-      <input name="submit" type="submit" value="Delete Tracker">
-    </fieldset>
-  </form> -->
 
   <form class="form tracker-form tracker" id="update-tracker-form" name="update-tracker-form">
     <fieldset>
@@ -170,19 +138,16 @@
       <p class="field-description">Note</p>
       <textarea class="comments-input field-input" name="tracker[comments]" placeholder="Note Text"></textarea>
       <br>
-      <!-- <input class="comments-input" name="tracker[comments]" placeholder="Comments" type="textarea"> -->
       <input class="submit-btn" name="submit" type="submit" value="Submit">
     </fieldset>
   </form>
 
   <div class="table-generated"></div>
 
-  <!-- <h1 class="h1-title h1-show-table-generated">Student Note:</h1> -->
   <div class="show-table-generated-container"></div>
 
   <div class="dashboard-container tracker">
     <div class="dashboard-description">
-      <!-- <p>Please make a selection below:</p> -->
       <button type="button" class="dashboard-btn view-dash-desktop btn btn-outline-success" id="show-records-btn">View Dashboard</button>
       <button type="button" class="dashboard-btn view-dash-desktop btn btn-outline-success" id="create-record-btn">Create Note</button>
     </div>

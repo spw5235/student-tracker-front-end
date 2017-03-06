@@ -4,7 +4,6 @@ const ui = require('./ui');
 const getFormFields = require('../../../lib/get-form-fields');
 const store = require('../store');
 const logic = require('./logic');
-// const eventsjs = require('./events');
 
 // LOGIN EVENTS
 
@@ -75,8 +74,6 @@ const onShowRecordsBtn = function() {
   $(".table-generated-container").show();
   $("#update-tracker-form").hide();
   $("#table-gen-id").remove();
-  // $("#create-record-btn").show();
-  // $("#h1-dashboard-table").remove();
 };
 
 const onGetTrackers = function(event) {
@@ -163,17 +160,10 @@ const onClickChangePasswordBtn = function() {
   $(".h1-title").remove();
   $("#update-form-success").hide();
   $("#new-form-success").hide();
-  // $("#change-password-btn").hide();
 };
- // $('#sign-in-btn').on('click', onClickSignInButton());
-
-//  $( "#sign-in-btn" ).on( "click", function() {
-//   onClickSignInButton();
-// });
 
 const addHandlers = () => {
   $('#get-tracker-form').on('submit', onGetTrackers);
-  // $('#show-tracker-form').on('submit', onShowTracker);
   $('#new-tracker-form').on('submit', onCreateTracker);
   $('#delete-tracker-form').on('submit', onDeleteTracker);
   $('#update-tracker-form').on('submit', onUpdateTracker);
@@ -188,16 +178,9 @@ const addHandlers = () => {
   $('#show-records-btn').on('click', onGetTrackers);
   $('.delete-button').on('click', onGetTrackers);
   $('#sign-in-btn').on('click', onClickSignInButton);
-
-  // $('.table-gen-btn-delete').on('click', onDeleteTracker);
-  // $( ".delete-button" ).on( "click", function() {
-  //  let btnClassName = parseInt( $( this ).attr("id") );
-  //  console.log(btnClassName);
-  // });
 };
 
 module.exports = {
   addHandlers,
   onDeleteTracker,
-  // onShowTracker,
 };
