@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Counselor Notepad</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+</head>
+
+<body class="container-fluid">
+  <div class="nav-container">
+    <div class="logo-text-container">
+      <p>Counselor Notepad</p>
+    </div>
+    <div class="insert-mobile-clearfix">
+      <div class="clearfix mobile-clearfix"></div>
+    </div>
+    <div class="nav-button-container">
+      <button class="login-button prelogin btn btn-primary" id="sign-up-btn">Sign-Up</button>
+      <button class="login-button prelogin btn btn-primary" id="sign-in-btn">Sign-in</button>
+      <button class="login-button postlogin btn btn-primary" id="change-password-btn">Change Password</button>
+      <button class="login-button postlogin btn btn-primary" id="sign-out-btn">Sign-out</button>
+    </div>
+  </div>
+  <div class="clearfix mobile-clearfix"></div>
+  <div class="warning-container">
+    <p id="sign-out-success" class="notification alert">You have successfully signed-out.</p>
+    <p id="sign-up-warning" class="password-warning warning alert">Error. Please Try Again.</p>
+    <p id="sign-in-success" class="password-warning notification alert">You have successfully signed-in. Please make a selection below.</p>
+    <p id="sign-out-warning" class="password-warning warning alert">Error signing-out. Please close your browser and try again.</p>
+    <p id="change-password-error" class="password-warning warning alert">Error changing password. Please try again.</p>
+    <p id="change-password-success" class="password-warning notification alert">You have successfully changed your password.</p>
+    <p id="sign-up-success" class="password-warning notification alert">You have successfully signed-up. Please sign-in to continue</p>
+    <p id="sign-in-warning" class="password-warning warning alert">Error signing-in. Please try again.</p>
+    <p id="new-form-error" class="password-warning warning alert">Error creating note. Please try again.</p>
+    <p id="new-form-success" class="password-warning notification alert">Your note has been successfully created.</p>
+    <p id="delete-form-success" class="password-warning notification alert">Your note has been successfully deleted.</p>
+    <p id="update-form-success" class="password-warning notification alert">You have successfully updated the note.</p>
+    <p class="password-warning warning alert" id="update-form-error">There has been an error updating the note. Please try again.</p>
+  </div>
+  <form class="form credential-form" id="sign-up" name="sign-up">
+    <fieldset>
+      <h1 class="form-h1">Sign-Up</h1>
+      <p class="field-description">Email</p>
+      <input class="field-input" name="credentials[email]" placeholder="email" type="text" value="">
+      <p class="field-description">Password</p>
+      <input class="field-input" name="credentials[password]" placeholder="password" type="password" value="">
+      <p class="field-description">Confirm Password</p>
+      <input class="field-input" name="credentials[password_confirmation]" placeholder="password confirmation" type="password" value="">
+      <br>
+      <input class="submit-btn" name="submit" type="submit" value="Submit">
+    </fieldset>
+  </form>
+
+  <form class="form credential-form" id="sign-in" name="sign-in">
+    <fieldset>
+      <h1 class="form-h1">Sign-In</h1>
+      <p class="field-description">Email</p>
+      <input class="field-input" name="credentials[email]" placeholder="email" type="text" value="">
+      <p class="field-description">Password</p>
+      <input class="field-input" name="credentials[password]" placeholder="password" type="password" value="">
+      <br>
+      <input class="submit-btn" name="submit" type="submit" value="Submit">
+    </fieldset>
+  </form>
+
+  <form class="form credential-form" id="sign-out" name="sign-out">
+    <fieldset>
+      <legend>Sign out!</legend>
+      <input class="submit-btn" name="submit" type="submit" value="Submit">
+    </fieldset>
+  </form>
+
+  <form class="form credential-form" id="change-password" name="change-password">
+    <fieldset>
+      <h1 class="form-h1">Change Password</h1>
+      <p class="field-description">Old Password</p>
+      <input class="field-input" name="passwords[old]" placeholder="Old Password" type="password">
+      <p class="field-description">New Password</p>
+      <input class="field-input" name="passwords[new]" placeholder="New Password" type="password">
+      <br>
+      <input class="submit-btn" name="submit" type="submit" value="Submit">
+    </fieldset>
+  </form>
+
+  <!-- HOMEPAGE DESCRIPTION -->
+  <div class="homepage-desc-container">
+    <h1>Counselor Notepad</h1>
+    <p class="hompage-desc-text">Counselor Notepad was developed for school counselors who would like to keep all student notes in one location. Counselor Notepad is ideal for:</p>
+    <img src="https://cloud.githubusercontent.com/assets/13546265/23592044/d62ccc3c-01c8-11e7-98fe-ca1ec812d178.jpg" alt="school counselor">
+    <ul>
+      <li>Classroom Observations</li>
+      <li>IEP Meetings</li>
+      <li>504 Meetings</li>
+      <li>Behavioral Plan Collaborations</li>
+      <li>1:1 Student Sessions</li>
+      <li>Faculty Meetings</li>
+    </ul>
+    <p class="hompage-desc-text">In Counselor Notepad, there is a counselor dashboard which provides an index for users to view a summary of all student notes. In addition, notes can be viewed, updated and deleted in the counselor dashboard. Sign up and try it today!</p>
+  </div>
+
+
+  <form class="form tracker-form tracker" id="new-tracker-form" name="new-tracker-form">
+    <fieldset>
+      <h1 class="form-h1">Create Student Note</h1>
+      <p class="field-description">First Name</p>
+      <input class="field-input" name="tracker[first_name]" placeholder="First Name" type="text">
+      <p class="field-description">Last Name</p>
+      <input class="field-input" name="tracker[last_name]" placeholder="Last Name" type="text">
+      <p class="field-description">Grade</p>
+      <input class="field-input" name="tracker[grade]" placeholder="Grade" type="text">
+      <p class="field-description">Note</p>
+      <textarea class="field-input comments-input" name="tracker[comments]" placeholder="Note Text"></textarea>
+      <br>
+      <input class="submit-btn" name="submit" id="create-tracker-btn" type="submit" value="Submit">
+    </fieldset>
+  </form>
+
+  <form class="form tracker-form tracker" id="update-tracker-form" name="update-tracker-form">
+    <fieldset>
+      <h1 class="form-h1">Update Student Note</h1>
+      <input name="tracker[id]" id="update-tracker-id" placeholder="Tracker ID" type="hidden">
+      <br>
+      <p class="field-description">First Name</p>
+      <input class="fn-input field-input" name="tracker[first_name]" placeholder="First Name" type="text">
+      <br>
+      <p class="field-description">Last Name</p>
+      <input class="ln-input field-input" name="tracker[last_name]" placeholder="Last Name" type="text">
+      <br>
+      <p class="field-description">Grade</p>
+      <input class="grade-input field-input" name="tracker[grade]" placeholder="Grade" type="text">
+      <br>
+      <p class="field-description">Note</p>
+      <textarea class="comments-input field-input" name="tracker[comments]" placeholder="Note Text"></textarea>
+      <br>
+      <input class="submit-btn" name="submit" type="submit" value="Submit">
+    </fieldset>
+  </form>
+
+  <div class="table-generated"></div>
+
+  <div class="show-table-generated-container"></div>
+
+  <div class="dashboard-container tracker">
+    <div class="dashboard-description">
+      <button type="button" class="dashboard-btn view-dash-desktop btn btn-outline-success" id="show-records-btn">View Dashboard</button>
+      <button type="button" class="dashboard-btn view-dash-desktop btn btn-outline-success" id="create-record-btn">Create Note</button>
+    </div>
+  </div>
+
+</body>
+
+</html>
